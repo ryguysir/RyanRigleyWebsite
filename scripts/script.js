@@ -151,7 +151,7 @@ function VideoBox() {
     //attach the videobox to the DOM
     document.getElementById("videoBoxContainer").appendChild(videoBox);
     videoImage.addEventListener("load", () => {
-      videoBoxImageContainer.style.opacity = "1";
+      videoImage.style.opacity = "1";
     });
 
     //whenever the lottie animation is clicked, it transitions to the different video files
