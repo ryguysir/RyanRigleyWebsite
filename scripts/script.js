@@ -197,7 +197,7 @@ function VideoBox() {
   shazam.title = "Shazam!";
   shazam.description =
     "It was such a pleasure to get to edit the trailer for this fantastically fun movie. The intro was done in partnership with an editor at Buddha Jones, but the rest was all done by me. I still have this song stuck in my head.";
-  shazam.imgSrc = "images/shazam.png";
+  shazam.imgSrc = "images/shazam.jpg";
   videoBoxStorage.push(shazam);
 
   //___________________________________________________________________________________
@@ -208,7 +208,7 @@ function VideoBox() {
   narcosS2.title = "Narcos: Season 2";
   narcosS2.description =
     "I worked on the TV campaign for the first season of Narcos, but it wasn't until Season 2 that I got the chance to create this trailer. The first version had a custom song made for it based off Paul Mccartney's 007 theme for Live and Let Die, but due to some legal reasons we had to find an ALT. I thought we'd never find something as good until our music supervisor suggested this track by Styx. I still love this song, and this trailer to this day.";
-  narcosS2.imgSrc = "images/narcosSeason2.png";
+  narcosS2.imgSrc = "images/narcosSeason2.jpg";
   videoBoxStorage.push(narcosS2);
 
   //___________________________________________________________________________________
@@ -219,7 +219,7 @@ function VideoBox() {
   extinction.title = "Extinction";
   extinction.description =
     "This was a very fun trailer to work on, even with the super quick turn around. I had a lot of fun making it my own, including recording my wife's breathing for the little girl's scene at the end!";
-  extinction.imgSrc = "images/extinction.png";
+  extinction.imgSrc = "images/extinction.jpg";
   videoBoxStorage.push(extinction);
 
   //___________________________________________________________________________________
@@ -229,7 +229,7 @@ function VideoBox() {
   narcosMexico.videos = ["292769952"];
   narcosMexico.title = "Narcos: Mexico";
   narcosMexico.description = "One of the last projects I worked on at Transit before moving up north to Seattle. The split frame trope is something I have used many times since cutting this.";
-  narcosMexico.imgSrc = "images/narcosMexico.png";
+  narcosMexico.imgSrc = "images/narcosMexico.jpg";
   videoBoxStorage.push(narcosMexico);
 
   //___________________________________________________________________________________
@@ -251,7 +251,7 @@ function VideoBox() {
   moneyHeistS2.title = "Money Heist: Season 2";
   moneyHeistS2.description =
     "This show was fairly difficult to work on because of how distracted I would get watching it down. I would get so wrapped up in what was going on, that I would entirely forget to read the subtitles and have to go back and look for lines. I should really learn spanish.";
-  moneyHeistS2.imgSrc = "images/moneyHeistS2.png";
+  moneyHeistS2.imgSrc = "images/moneyHeistS2.jpg";
   videoBoxStorage.push(moneyHeistS2);
 
   //___________________________________________________________________________________
@@ -261,7 +261,7 @@ function VideoBox() {
   ozarkS1.videos = ["272281344"];
   ozarkS1.title = "Ozark: Season 1";
   ozarkS1.description = `When we first got this show in at work I had 0 faith in it being good. I mean come on, a Jason Bateman lead crime drama in Missouri? But oh boy I was wrong, it's now one of my favorite shows. And I'm so glad to have worked on it, no matter how small. Although the gun sfx on the title has been used on most of the other seasons, and that was all me :-)`;
-  ozarkS1.imgSrc = "images/ozarkSeason1.png";
+  ozarkS1.imgSrc = "images/ozarkSeason1.jpg";
   videoBoxStorage.push(ozarkS1);
 
   //___________________________________________________________________________________
@@ -284,7 +284,7 @@ function VideoBox() {
   peoplePlacesThings.videos = ["209164301"];
   peoplePlacesThings.title = "People, Places, Things";
   peoplePlacesThings.description = "My first trailer finish ever! I think this is a very underated indie film that you should check out. Great learning experience all around.";
-  peoplePlacesThings.imgSrc = "images/peoplePlacesThings.png";
+  peoplePlacesThings.imgSrc = "images/peoplePlacesThings.jpg";
   videoBoxStorage.push(peoplePlacesThings);
 
   //___________________________________________________________________________________
@@ -295,7 +295,7 @@ function VideoBox() {
   aVeryMurrayChristmas.title = "A Very Murray Christmas";
   aVeryMurrayChristmas.description =
     "This was a very strange project to work on, and it needed a strange trailer to announce it. I'm not sure who came up with the idea for the Time Life style video, but I'm glad that's the direction we went in.";
-  aVeryMurrayChristmas.imgSrc = "images/aVeryMurrayChristmas.png";
+  aVeryMurrayChristmas.imgSrc = "images/aVeryMurrayChristmas.jpg";
   videoBoxStorage.push(aVeryMurrayChristmas);
 
   //___________________________________________________________________________________
@@ -306,7 +306,7 @@ function VideoBox() {
   boschS2.title = "Bosch Season 2";
   boschS2.description =
     "The most interesting part about working on this project was the music. The executive team at Amazon decided to have a custom song created for this trailer. And at one point they even requested our on staff writer to make up lyrics for it. I really wish I still had the lyrics somewhere.";
-  boschS2.imgSrc = "images/boschSeason2.png";
+  boschS2.imgSrc = "images/boschSeason2.jpg";
   videoBoxStorage.push(boschS2);
 })();
 
