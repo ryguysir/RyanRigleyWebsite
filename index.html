@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ryan Rigley</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/scripts/script.js" defer></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <div id="background"></div>
+    <div id="siteContainer">
+      <lottie-player id="headerLottieTitle" src="https://assets4.lottiefiles.com/packages/lf20_cwcbkcbw.json" autoplay></lottie-player>
+
+      <div id="searchBoxContainer">
+        <div id="searchBoxFlex">
+          <input type="text" id="searchBox" />
+          <div id="searchSubmit" onclick="searchBox()">Submit</div>
+        </div>
+      </div>
+
+      <div id="tagContainer">
+        <div class="tag">Corporate</div>
+        <div class="tag">Technology</div>
+        <div class="tag">Microsoft</div>
+        <div class="tag">Action</div>
+        <div class="tag">Adventure</div>
+        <div class="tag">Drama</div>
+        <div class="tag">Horror</div>
+        <div class="tag">Sci-Fi</div>
+        <div class="tag">Comedy</div>
+        <div class="tag">Historical</div>
+        <div class="tag search">Search</div>
+        <div class="tag a2z">Browse All</div>
+      </div>
+
+      <div id="videoBoxContainer"></div>
+
+      <lottie-player id="loopingLottie" src="https://assets10.lottiefiles.com/packages/lf20_juucwxuu.json" autoplay loop></lottie-player>
+
+      <div id="footer">This site was created by Ryan Rigley</div>
+    </div>
+  </body>
+</html>
