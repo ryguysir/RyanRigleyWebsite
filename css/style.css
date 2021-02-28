@@ -197,6 +197,7 @@ body {
 
 .videoBoxImageContainer {
   animation: fadeInScaleIn 1s ease-in-out;
+  transition: all 0.5s ease-out;
   width: 500px;
   height: 281.25px;
   margin-top: -284.25px;
@@ -205,6 +206,7 @@ body {
   align-items: center;
   justify-content: center;
   justify-items: center;
+  opacity: 0;
 }
 
 .videoStill {
