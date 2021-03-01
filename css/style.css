@@ -26,7 +26,11 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgb(106, 217, 227);
-  background: linear-gradient(0deg, rgba(106, 217, 227, 1) 0%, rgba(78, 198, 198, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(106, 217, 227, 1) 0%,
+    rgba(78, 198, 198, 1) 100%
+  );
 }
 
 #headerLottieTitle {
@@ -41,10 +45,12 @@ body {
 #loopingLottie {
   position: relative;
   margin: 0 auto;
-  top: -20%;
+  top: -30%;
   transform-origin: center;
   transform: scale(0.5);
-  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(
+    0px 0px 20px rgba(0, 0, 0, 0.25)
+  );
 }
 
 #videoPlayer {
@@ -75,7 +81,11 @@ body {
   top: 100%;
   transform: translateX(-50%);
 
-  background: linear-gradient(0deg, hsl(44, 99%, 36%), #edb201);
+  background: linear-gradient(
+    0deg,
+    hsl(44, 99%, 36%),
+    #edb201
+  );
 }
 
 #videoPlayer iframe {
@@ -83,7 +93,8 @@ body {
   max-width: 100%;
   border: 10px rgb(200, 200, 200) solid;
   border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.75) 0px 0px 10px;
+  box-shadow: rgba(255, 255, 255, 0.75) 0px 0px
+    10px;
 }
 
 .videoInlay {
@@ -134,7 +145,9 @@ body {
   padding: 0.5em 1em 0.5em 1em;
   margin: 0.5em;
   background: var(--third-color);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px
+      inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   cursor: pointer;
 }
 #searchSubmit:hover {
@@ -167,11 +180,15 @@ body {
   font-weight: 300;
   border-radius: 12px;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -6px 6px, rgba(240, 46, 170, 0.1) -9px 9px;
+  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px,
+    rgba(240, 46, 170, 0.2) -6px 6px,
+    rgba(240, 46, 170, 0.1) -9px 9px;
 }
 .videoBox:hover {
   background: var(--second-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px, rgba(240, 46, 170, 0.1) -18px 18px;
+  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px,
+    rgba(240, 46, 170, 0.2) -12px 12px,
+    rgba(240, 46, 170, 0.1) -18px 18px;
 }
 
 .videoBox iframe {
@@ -264,7 +281,9 @@ body {
   padding: 0.5em;
   margin: 0.5em;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -5px 5px;
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px,
+    rgba(240, 46, 170, 0.3) -3px 3px,
+    rgba(240, 46, 170, 0.2) -5px 5px;
   cursor: pointer;
 }
 
@@ -278,7 +297,11 @@ body {
 
 .tagToggled {
   background: var(--second-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.4) -4px 4px, rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.4) -8px 8px, rgba(240, 46, 170, 0.2) -10px 10px;
+  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px,
+    rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.3) -6px 6px,
+    rgba(240, 46, 170, 0.4) -8px 8px,
+    rgba(240, 46, 170, 0.2) -10px 10px;
 }
 
 .tagToggled:hover {
@@ -340,7 +363,7 @@ body {
     margin-bottom: -50px;
   }
   #loopingLottie {
-    top: -30%;
+    top: -40%;
   }
   #tagContainer {
     grid-template-columns: repeat(4, 1fr);
