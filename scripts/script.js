@@ -32,13 +32,14 @@ allTags.forEach((e) => {
     //if tag is Search, open the searchBox elem and return
     if (event.srcElement.innerHTML == "Search") {
       if (document.getElementById("searchBoxContainer").style.display !== "inline-block") {
+        event.srcElement.classList.toggle("tagToggled");
         document.getElementById("searchBoxContainer").style.display = "inline-block";
         document.getElementById("searchBox").focus();
-        event.srcElement.classList.toggle("tagToggled");
+
         return;
       } else {
-        document.getElementById("searchBoxContainer").style.display = "none";
         event.srcElement.classList.toggle("tagToggled");
+        document.getElementById("searchBoxContainer").style.display = "none";
         return;
       }
     }

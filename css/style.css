@@ -1,6 +1,6 @@
 :root {
   --main-color: rgb(78, 198, 198);
-  --second-color: rgb(232, 215, 170);
+  --second-color: rgb(109, 200, 228);
   --third-color: rgb(179, 179, 255);
   --fourth-color: #eba2a8;
   --offWhite-color: rgba(220, 220, 255, 1);
@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: "Oswald", sans-serif;
+  font-family: "Lato", sans-serif;
   display: flex;
   flex-flow: column;
   margin: 0px;
@@ -22,15 +22,32 @@ body {
 
 #background {
   position: absolute;
-  z-index: -100;
   width: 100vw;
   height: 100vh;
-  background: rgb(106, 217, 227);
-  background: linear-gradient(
-    0deg,
-    rgba(106, 217, 227, 1) 0%,
-    rgba(78, 198, 198, 1) 100%
-  );
+  overflow: hidden;
+  z-index: -100;
+}
+
+#backgroundLayer1 {
+  animation: left2right 6s ease-in-out infinite;
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  background: rgb(30, 255, 253);
+  background: linear-gradient(45deg, #1efffd 0%, #36807e 100%);
+  z-index: -99;
+}
+
+#backgroundLayer2 {
+  animation: right2left 6s ease-in-out infinite;
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  opacity: 1;
+  mix-blend-mode: overlay;
+  background: rgb(30, 255, 96);
+  background: linear-gradient(-45deg, #18ccc9 0%, #0f807e 100%);
+  z-index: -98;
 }
 
 #headerLottieTitle {
@@ -48,9 +65,7 @@ body {
   top: -30%;
   transform-origin: center;
   transform: scale(0.5);
-  filter: drop-shadow(
-    0px 0px 20px rgba(0, 0, 0, 0.25)
-  );
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
 }
 
 #videoPlayer {
@@ -81,11 +96,7 @@ body {
   top: 100%;
   transform: translateX(-50%);
 
-  background: linear-gradient(
-    0deg,
-    hsl(44, 99%, 36%),
-    #edb201
-  );
+  background: linear-gradient(0deg, hsl(44, 99%, 36%), #edb201);
 }
 
 #videoPlayer iframe {
@@ -93,8 +104,7 @@ body {
   max-width: 100%;
   border: 10px rgb(200, 200, 200) solid;
   border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.75) 0px 0px
-    10px;
+  box-shadow: rgba(255, 255, 255, 0.75) 0px 0px 10px;
 }
 
 .videoInlay {
@@ -145,8 +155,7 @@ body {
   padding: 0.5em 1em 0.5em 1em;
   margin: 0.5em;
   background: var(--third-color);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px
-      inset,
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   cursor: pointer;
 }
@@ -180,14 +189,12 @@ body {
   font-weight: 300;
   border-radius: 12px;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px,
-    rgba(240, 46, 170, 0.2) -6px 6px,
+  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -6px 6px,
     rgba(240, 46, 170, 0.1) -9px 9px;
 }
 .videoBox:hover {
   background: var(--second-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px,
-    rgba(240, 46, 170, 0.2) -12px 12px,
+  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px,
     rgba(240, 46, 170, 0.1) -18px 18px;
 }
 
@@ -276,36 +283,37 @@ body {
   white-space: nowrap;
   display: table;
   text-align: center;
-  font-weight: 300;
-  border-radius: 6px;
+  color: rgb(100, 100, 120);
+  font-weight: 500;
+  border-radius: 4px;
   padding: 0.5em;
   margin: 0.5em;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px,
-    rgba(240, 46, 170, 0.3) -3px 3px,
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.3) -3px 3px,
     rgba(240, 46, 170, 0.2) -5px 5px;
   cursor: pointer;
 }
 
 .tag:hover {
   background: var(--second-color);
-  /*   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
-    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-    rgba(255, 255, 255, 0.15) -3px 3px 9px inset,
-    rgba(0, 0, 0, 0.05) 3px -3px 12px inset; */
+  border-radius: 8px;
+  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.4) -8px 8px,
+    rgba(240, 46, 170, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
+    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
 }
 
 .tagToggled {
   background: var(--second-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px,
-    rgba(240, 46, 170, 0.4) -4px 4px,
-    rgba(240, 46, 170, 0.3) -6px 6px,
-    rgba(240, 46, 170, 0.4) -8px 8px,
-    rgba(240, 46, 170, 0.2) -10px 10px;
+  border-radius: 8px;
+  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.4) -8px 8px,
+    rgba(240, 46, 170, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
+    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
 }
 
 .tagToggled:hover {
-  background: rgba(220, 220, 255, 1);
+  background: rgb(68, 152, 216);
 }
 
 .search {
@@ -353,6 +361,30 @@ body {
   }
 }
 
+@keyframes left2right {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes right2left {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: -50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   #headerLottieTitle {
     position: relative;
@@ -363,7 +395,7 @@ body {
     margin-bottom: -50px;
   }
   #loopingLottie {
-    top: -40%;
+    top: -30%;
   }
   #tagContainer {
     grid-template-columns: repeat(4, 1fr);
