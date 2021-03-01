@@ -297,9 +297,8 @@ body {
 .tag:hover {
   background: var(--second-color);
   border-radius: 8px;
-  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.4) -4px 4px,
-    rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.4) -8px 8px,
-    rgba(240, 46, 170, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.3) -3px 3px,
+    rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
     rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
 }
 
