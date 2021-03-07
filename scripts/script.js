@@ -18,17 +18,6 @@ window.onload = function () {
 var allTags = document.querySelectorAll(".tag");
 allTags.forEach((e) => {
   e.addEventListener("click", (event) => {
-    //if no tags are selected, then turn on the looping lottie file
-    for (i = 0; i < document.getElementsByClassName("tag").length; i++) {
-      if (document.getElementsByClassName("tag")[i].classList.contains("tagToggled")) {
-        document.getElementById("loopingLottie").classList.toggle("hidden");
-        break;
-      } else {
-        document.getElementById("loopingLottie").classList.toggle("hidden");
-        break;
-      }
-    }
-
     //if tag is Search, open the searchBox elem and return
     if (event.srcElement.innerHTML == "Search") {
       if (document.getElementById("searchBoxContainer").style.display !== "inline-block") {
@@ -70,6 +59,7 @@ allTags.forEach((e) => {
     }
     //this is where you activate the search function
     tagSearch();
+    loopingLottieCheck();
   });
 });
 
@@ -462,6 +452,30 @@ function VideoBox() {
     "Narcos: Season 1 was one of the first big projects that I worked on at the beginning of my career. It was an incredibly rewarding experience that won me my first key art award for my solo work on 'just say no'.";
   narcosS1.imgSrc = "images/narcosSeason1.jpg";
   videoBoxStorage.push(narcosS1);
+
+  //___________________________________________________________________________________
+  let theMountainBetweenUs = new VideoBox();
+  theMountainBetweenUs.rank = 0;
+  theMountainBetweenUs.rankImportance = 0;
+  theMountainBetweenUs.tags = ["action", "drama"];
+  theMountainBetweenUs.videos = ["279757097"];
+  theMountainBetweenUs.title = "The Mountain Between Us";
+  theMountainBetweenUs.description =
+    "Not much to say about this one, I only worked on it for a little bit. I like working on Idris Elba movies because I like him a lot as an actor, and the only other project I worked on with him in it was Fast & Furious Presents: Hobbs & Shaw.";
+  theMountainBetweenUs.imgSrc = "images/theMountainBetweenUs.jpg";
+  videoBoxStorage.push(theMountainBetweenUs);
+
+  //___________________________________________________________________________________
+  let xMenDaysofFuturePast = new VideoBox();
+  xMenDaysofFuturePast.rank = 0;
+  xMenDaysofFuturePast.rankImportance = 1;
+  xMenDaysofFuturePast.tags = ["action", "sci-fi"];
+  xMenDaysofFuturePast.videos = ["208222198", "208222240", "208222173", "208222253", "208222158"];
+  xMenDaysofFuturePast.title = "X-Men: Days of Future Past";
+  xMenDaysofFuturePast.description =
+    "I maintain this is one of the best Xmen movies they made. It was fun, had creative fight scenes and set pieces, and had an all star cast. I won a silver key art award for my motion graphics work on this one.";
+  xMenDaysofFuturePast.imgSrc = "images/xMenDaysOfFuturePast.jpg";
+  videoBoxStorage.push(xMenDaysofFuturePast);
 })();
 
 //functions below here
@@ -543,11 +557,35 @@ function tagSearch() {
   removeAllChildNodes(document.getElementById("videoBoxContainer"));
 
   for (i = 0; i < videoBoxStorage.length; i++) {
+    let tagsSearched = 0;
     for (j = 0; j < allTagsSearchList.length; j++) {
       if (videoBoxStorage[i].tags.includes(allTagsSearchList[j].toLowerCase())) {
-        videoBoxStorage[i].rank += 1;
+        tagsSearched++;
       }
+    }
+    if (tagsSearched == allTagsSearchList.length && allTagsSearchList.length >= 1) {
+      videoBoxStorage[i].rank += 1;
     }
   }
   rankSort();
+}
+
+/*
+  this is still not working correctly!!!!!!
+  right now whenever you click two buttons it turns back on the looping lottie animation because the total number of tags not Toggled doesnt equal the total number of tags. needs to be fixed, but im too tired.
+*/
+function loopingLottieCheck() {
+  let curTag = document.getElementsByClassName("tag");
+  let isLottieOff = false;
+  let tagsNotToggled = 0;
+  for (i = 0; i < curTag.length; i++) {
+    if (!curTag[i].classList.contains("tagToggled")) {
+      tagsNotToggled++;
+    }
+  }
+  if (tagsNotToggled != curTag.length) {
+    document.getElementById("loopingLottie").classList.toggle("hidden");
+  } else {
+    document.getElementById("loopingLottie").classList.toggle("hidden");
+  }
 }

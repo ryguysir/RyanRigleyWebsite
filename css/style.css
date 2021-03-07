@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-flow: column;
   margin: 0px;
@@ -193,7 +193,7 @@ body {
     rgba(240, 46, 170, 0.1) -9px 9px;
 }
 .videoBox:hover {
-  background: var(--second-color);
+  border-radius: 20px;
   box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px,
     rgba(240, 46, 170, 0.1) -18px 18px;
 }
@@ -284,20 +284,23 @@ body {
   display: table;
   text-align: center;
   color: rgb(100, 100, 120);
-  font-weight: 500;
+  font-weight: 300;
   border-radius: 4px;
   padding: 0.5em;
   margin: 0.5em;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.3) -3px 3px,
-    rgba(240, 46, 170, 0.2) -5px 5px;
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.4) -2px 2px,
+    rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
+    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
   cursor: pointer;
 }
 
 .tag:hover {
   background: var(--second-color);
   border-radius: 8px;
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.3) -3px 3px,
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.4) -2px 2px,
+    rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.4) -4px 4px,
     rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
     rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
 }
@@ -312,7 +315,11 @@ body {
 }
 
 .tagToggled:hover {
-  background: rgb(68, 152, 216);
+  background: var(--offWhite-color);
+  box-shadow: rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.4) -8px 8px,
+    rgba(240, 46, 170, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
+    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
 }
 
 .search {
@@ -323,19 +330,6 @@ body {
 .a2z {
   grid-column: 5;
   background: #bc78ac;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-weight: 300;
-  margin-top: 4em;
-  margin-bottom: 1em;
-  letter-spacing: 2px;
-  color: #6d8082;
-  font-family: "Roboto", sans-serif;
 }
 
 @keyframes fadeInScaleIn {
@@ -399,13 +393,16 @@ body {
   #tagContainer {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px 5px;
   }
   .tag {
+    font-size: 80%;
     font-weight: 300;
     padding: 0.35em;
     margin: 0.35em;
   }
   .tag:hover {
+    border-radius: 4px;
     background: var(--offWhite-color);
   }
   .search {
@@ -425,6 +422,15 @@ body {
   .videoBoxImageContainer {
     animation: fadeInScaleIn 1s ease-in-out;
     width: 340px;
+  }
+
+  .videoBox .description {
+    font-size: 80%;
+    font-weight: 200;
+  }
+
+  .videoBox .title {
+    font-weight: 600;
   }
 
   .lottiePlay {
