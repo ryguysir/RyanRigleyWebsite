@@ -1,8 +1,9 @@
 //Global Variables
 //________________________________________________________________________________________
-var videoBoxStorage = [];
 var allTagsSearchList = [];
 var isMobile = false;
+var videoBoxStorage = [];
+var tagsTagged = false;
 
 //event listeners
 //________________________________________________________________________________________
@@ -24,6 +25,7 @@ allTags.forEach((e) => {
         event.srcElement.classList.toggle("tagToggled");
         document.getElementById("searchBoxContainer").style.display = "inline-block";
         document.getElementById("searchBox").focus();
+        loopingLottieCheck();
 
         return;
       } else {
@@ -39,9 +41,10 @@ allTags.forEach((e) => {
       if (event.srcElement.classList.contains("tagToggled")) {
         removeAllChildNodes(document.getElementById("videoBoxContainer"));
         event.srcElement.classList.toggle("tagToggled");
+        document.getElementById("loopingLottie").style.display = "block";
         return;
       }
-
+      document.getElementById("loopingLottie").style.display = "none";
       browseAll();
       return;
     }
@@ -476,6 +479,42 @@ function VideoBox() {
     "I maintain this is one of the best Xmen movies they made. It was fun, had creative fight scenes and set pieces, and had an all star cast. I won a silver key art award for my motion graphics work on this one.";
   xMenDaysofFuturePast.imgSrc = "images/xMenDaysOfFuturePast.jpg";
   videoBoxStorage.push(xMenDaysofFuturePast);
+
+  //___________________________________________________________________________________
+  let dawnOfThePlanetOfTheApes = new VideoBox();
+  dawnOfThePlanetOfTheApes.rank = 0;
+  dawnOfThePlanetOfTheApes.rankImportance = 1;
+  dawnOfThePlanetOfTheApes.tags = ["action", "sci-fi", "drama"];
+  dawnOfThePlanetOfTheApes.videos = ["209163648", "209163616", "209163695"];
+  dawnOfThePlanetOfTheApes.title = "Dawn of the Planet of the Apes";
+  dawnOfThePlanetOfTheApes.description =
+    "What a fantastic movie this is, and a great project to work on. I mostly worked on the motion graphics for this campaign, so all of the title design and transitions are made by me.";
+  dawnOfThePlanetOfTheApes.imgSrc = "images/dawnOfThePlanetOfTheApes.jpg";
+  videoBoxStorage.push(dawnOfThePlanetOfTheApes);
+
+  //___________________________________________________________________________________
+  let theGreatWall = new VideoBox();
+  theGreatWall.rank = 0;
+  theGreatWall.rankImportance = 0;
+  theGreatWall.tags = ["action", "sci-fi"];
+  theGreatWall.videos = ["208768902"];
+  theGreatWall.title = "The Great Wall";
+  theGreatWall.description =
+    "I worked really hard on this campaign. I think by the end of it, I had cut a handful of pretty good 30 second TV spots that all didn't end up finishing. We were convinced the clients would not want to finish any of our spots, but one day they ended up finishing one of them. Not a great spot, not a great movie, but a fun experience.";
+  theGreatWall.imgSrc = "images/theGreatWall.jpg";
+  videoBoxStorage.push(theGreatWall);
+
+  //___________________________________________________________________________________
+  let theWolverine = new VideoBox();
+  theWolverine.rank = 0;
+  theWolverine.rankImportance = 1;
+  theWolverine.tags = ["action", "sci-fi", "drama"];
+  theWolverine.videos = ["208427854", "208427841"];
+  theWolverine.title = "The Wolverine";
+  theWolverine.description =
+    "I'm a big Marvel fan, so I would jump at any opportunity to work on one of their movies. I ended up getting a bronze key art award for one of my spots for The Wolverine.";
+  theWolverine.imgSrc = "images/theWolverine.jpg";
+  videoBoxStorage.push(theWolverine);
 })();
 
 //functions below here
@@ -507,7 +546,7 @@ function searchBox() {
 
   for (i = 0; i < videoBoxStorage.length; i++) {
     let re = new RegExp(`${searchQuery.toLowerCase()}`, "gi");
-    if (videoBoxStorage[i].title.match(re) !== null) {
+    if (videoBoxStorage[i].title.toLowerCase().match(re) !== null) {
       videoBoxStorage[i].rank += 1;
     }
   }
@@ -570,22 +609,17 @@ function tagSearch() {
   rankSort();
 }
 
-/*
-  this is still not working correctly!!!!!!
-  right now whenever you click two buttons it turns back on the looping lottie animation because the total number of tags not Toggled doesnt equal the total number of tags. needs to be fixed, but im too tired.
-*/
 function loopingLottieCheck() {
+  let taggedCount = 0;
   let curTag = document.getElementsByClassName("tag");
-  let isLottieOff = false;
-  let tagsNotToggled = 0;
   for (i = 0; i < curTag.length; i++) {
-    if (!curTag[i].classList.contains("tagToggled")) {
-      tagsNotToggled++;
+    if (curTag[i].classList.contains("tagToggled")) {
+      taggedCount++;
     }
   }
-  if (tagsNotToggled != curTag.length) {
-    document.getElementById("loopingLottie").classList.toggle("hidden");
+  if (taggedCount == 0) {
+    document.getElementById("loopingLottie").style.display = "block";
   } else {
-    document.getElementById("loopingLottie").classList.toggle("hidden");
+    document.getElementById("loopingLottie").style.display = "none";
   }
 }
