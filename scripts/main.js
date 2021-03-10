@@ -288,7 +288,7 @@ function VideoBox() {
   let peoplePlacesThings = new VideoBox();
   peoplePlacesThings.rank = 0;
   peoplePlacesThings.rankImportance = 1;
-  peoplePlacesThings.tags = ["drama", "comedy"];
+  peoplePlacesThings.tags = ["drama", "comedy", "romance"];
   peoplePlacesThings.videos = ["209164301"];
   peoplePlacesThings.title = "People, Places, Things";
   peoplePlacesThings.description =
@@ -324,7 +324,7 @@ function VideoBox() {
   let theGetDown = new VideoBox();
   theGetDown.rank = 0;
   theGetDown.rankImportance = 0;
-  theGetDown.tags = ["drama", "historical"];
+  theGetDown.tags = ["drama", "historical", "romance"];
   theGetDown.videos = ["208769604"];
   theGetDown.title = "The Get Down";
   theGetDown.description =
@@ -460,7 +460,7 @@ function VideoBox() {
   let theMountainBetweenUs = new VideoBox();
   theMountainBetweenUs.rank = 0;
   theMountainBetweenUs.rankImportance = 0;
-  theMountainBetweenUs.tags = ["action", "drama"];
+  theMountainBetweenUs.tags = ["action", "drama", "romance"];
   theMountainBetweenUs.videos = ["279757097"];
   theMountainBetweenUs.title = "The Mountain Between Us";
   theMountainBetweenUs.description =
@@ -515,6 +515,375 @@ function VideoBox() {
     "I'm a big Marvel fan, so I would jump at any opportunity to work on one of their movies. I ended up getting a bronze key art award for one of my spots for The Wolverine.";
   theWolverine.imgSrc = "images/theWolverine.jpg";
   videoBoxStorage.push(theWolverine);
+
+  //___________________________________________________________________________________
+  let joy = new VideoBox();
+  joy.rank = 0;
+  joy.rankImportance = 1;
+  joy.tags = ["historical", "drama"];
+  joy.videos = ["209164131", "209164107"];
+  joy.title = "Joy";
+  joy.description =
+    "I cut a trailer to this over a month or so that didn't end up finishing, but I did get to watch a bunch of dailies and see how David O. Russell directs.";
+  joy.imgSrc = "images/joy.jpg";
+  videoBoxStorage.push(joy);
+
+  //___________________________________________________________________________________
+  let paperTowns = new VideoBox();
+  paperTowns.rank = 0;
+  paperTowns.rankImportance = 1;
+  paperTowns.tags = ["drama", "comedy", "romance"];
+  paperTowns.videos = ["208253092", "208252719", "208252904", "208252887"];
+  paperTowns.title = "Paper Towns";
+  paperTowns.description =
+    "The client for this film ended up having me make many different graphic styles throughout the whole campaign, some worked, some didn't.";
+  paperTowns.imgSrc = "images/paperTowns.jpg";
+  videoBoxStorage.push(paperTowns);
+
+  //___________________________________________________________________________________
+  let theLongestRide = new VideoBox();
+  theLongestRide.rank = 0;
+  theLongestRide.rankImportance = 0;
+  theLongestRide.tags = ["drama", "historical", "romance"];
+  theLongestRide.videos = [
+    "208767181",
+    "208767145",
+    "208767760",
+    "208767783",
+    "208768229",
+    "208767210",
+    "208767799",
+    "208767812",
+  ];
+  theLongestRide.title = "The Longest Ride";
+  theLongestRide.description =
+    "Oh boy, this really put the pain in TV campaign. I started out assisting an editor on the trailer for this film, and by the end of the project I was solely in charge of the entire TV campaign. It was a lot of work, but the pay off was getting many of my first finished TV spots that more or less started my career. I was also convinced this would be Britt Robertson's big break... what happened to her?";
+  theLongestRide.imgSrc = "images/theLongestRide.jpg";
+  videoBoxStorage.push(theLongestRide);
+
+  //___________________________________________________________________________________
+  let oculus = new VideoBox();
+  oculus.rank = 0;
+  oculus.rankImportance = 0;
+  oculus.tags = ["horror"];
+  oculus.videos = ["209164279"];
+  oculus.title = "Oculus";
+  oculus.description =
+    "I HATED WORKING ON THIS FILM. The movie was actually pretty good, but they wanted this :15 turned around in a weekend (graphics and cut) so I had to work long hours staring at scary imagery. By the end, I had really quickly covered the scary faces with pictures of Jennifer Lawrance (my crush at the time) so that I could keep working without getting panic farts.";
+  oculus.imgSrc = "images/oculus.jpg";
+  videoBoxStorage.push(oculus);
+
+  //___________________________________________________________________________________
+  let theMazeRunner = new VideoBox();
+  theMazeRunner.rank = 0;
+  theMazeRunner.rankImportance = 0;
+  theMazeRunner.tags = ["action", "adventure", "sci-fi"];
+  theMazeRunner.videos = ["209164210"];
+  theMazeRunner.title = "The Maze Runner";
+  theMazeRunner.description =
+    "This was one of the first projects I worked on officially as an editor. I also helped on all the motion graphics, which included a lot of blends from live footage to comic book pages.";
+  theMazeRunner.imgSrc = "images/theMazeRunner.jpg";
+  videoBoxStorage.push(theMazeRunner);
+
+  //___________________________________________________________________________________
+  let theMazeRunnerScorchTrials = new VideoBox();
+  theMazeRunnerScorchTrials.rank = 0;
+  theMazeRunnerScorchTrials.rankImportance = 0;
+  theMazeRunnerScorchTrials.tags = ["action", "adventure", "sci-fi"];
+  theMazeRunnerScorchTrials.videos = ["209164258"];
+  theMazeRunnerScorchTrials.title = "Maze Runner: The Scorch Trials";
+  theMazeRunnerScorchTrials.description =
+    "I worked on all 3 of the Maze Runner movies, and finished works for the first 2. I had a trailer for the third film that I worked on for some time, but it was scraped after Dylan O'Brien was injured and they had to delay the production.";
+  theMazeRunnerScorchTrials.imgSrc = "images/theMazeRunnerScorchTrials.jpg";
+  videoBoxStorage.push(theMazeRunnerScorchTrials);
+
+  //___________________________________________________________________________________
+  let jackRyan = new VideoBox();
+  jackRyan.rank = 0;
+  jackRyan.rankImportance = 0;
+  jackRyan.tags = ["action", "adventure"];
+  jackRyan.videos = ["209164258"];
+  jackRyan.title = "Jack Ryan: Shadow Recruit";
+  jackRyan.description =
+    "I don't remember much about this film, but I do remember the line 'this is geopolitics, not couples therapy' being used throughout the office to much laughter. For example, this is a chicken sandwich not couples therapy.";
+  jackRyan.imgSrc = "images/jackRyanShadowRecruit.jpg";
+  videoBoxStorage.push(jackRyan);
+
+  //___________________________________________________________________________________
+  let ifIStay = new VideoBox();
+  ifIStay.rank = 0;
+  ifIStay.rankImportance = 0;
+  ifIStay.tags = ["drama", "romance"];
+  ifIStay.videos = ["209163980"];
+  ifIStay.title = "If I Stay";
+  ifIStay.description =
+    "Well you know what they say about teen love dramas involving a tragic death, make a TV spot that copies the style of Alien. Which is exactly what I did for this.";
+  ifIStay.imgSrc = "images/ifIStay.jpg";
+  videoBoxStorage.push(ifIStay);
+
+  //___________________________________________________________________________________
+  let eddieTheEagle = new VideoBox();
+  eddieTheEagle.rank = 0;
+  eddieTheEagle.rankImportance = 0;
+  eddieTheEagle.tags = ["adventure", "comedy", "historical"];
+  eddieTheEagle.videos = ["209163863", "209163824"];
+  eddieTheEagle.title = "Eddie The Eagle";
+  eddieTheEagle.description =
+    "I really loved this movie, it was exactly the type of corny / inspirational / heartfelt stories that I loved in film's from the 90's. I only got to finish 2 spots in total, but I worked on many more.";
+  eddieTheEagle.imgSrc = "images/eddieTheEagle.jpg";
+  videoBoxStorage.push(eddieTheEagle);
+
+  //___________________________________________________________________________________
+  let theFinestHours = new VideoBox();
+  theFinestHours.rank = 0;
+  theFinestHours.rankImportance = 1;
+  theFinestHours.tags = ["adventure", "drama", "historical", "romance"];
+  theFinestHours.videos = ["209510595", "209510549"];
+  theFinestHours.title = "The Finest Hours";
+  theFinestHours.description =
+    "We got this project in at Transit mainly because of the work we did for Pete's Dragon. I tried to give them something different, and I think I delivered. One funny thing to note is that the ADR that Chris Pine recorded ended up having a much thicker Boston accent.";
+  theFinestHours.imgSrc = "images/theFinestHours.jpg";
+  videoBoxStorage.push(theFinestHours);
+
+  //___________________________________________________________________________________
+  let runnerRunner = new VideoBox();
+  runnerRunner.rank = 0;
+  runnerRunner.rankImportance = 0;
+  runnerRunner.tags = ["action", "drama"];
+  runnerRunner.videos = ["312819548"];
+  runnerRunner.title = "Runner Runner";
+  runnerRunner.description =
+    "Does anyone even remember that this film existed? I do, because it was the first project I ever finished my motion graphics with.";
+  runnerRunner.imgSrc = "images/runnerRunner.jpg";
+  videoBoxStorage.push(runnerRunner);
+
+  //___________________________________________________________________________________
+  let theSecretLifeofWalterMitty = new VideoBox();
+  theSecretLifeofWalterMitty.rank = 0;
+  theSecretLifeofWalterMitty.rankImportance = 3;
+  theSecretLifeofWalterMitty.tags = ["adventure", "drama", "romance"];
+  theSecretLifeofWalterMitty.videos = ["208428637", "208428618"];
+  theSecretLifeofWalterMitty.title = "The Secret Life Of Walter Mitty";
+  theSecretLifeofWalterMitty.description =
+    "I mainly worked as a motion graphics artist for this campaign, and I ended up winning the Grand Key Art award for my spot Tumblr DHD.";
+  theSecretLifeofWalterMitty.imgSrc = "images/theSecretLifeofWalterMitty.jpg";
+  videoBoxStorage.push(theSecretLifeofWalterMitty);
+
+  //___________________________________________________________________________________
+  let valveTheInternational = new VideoBox();
+  valveTheInternational.rank = 0;
+  valveTheInternational.rankImportance = 3;
+  valveTheInternational.tags = ["corporate"];
+  valveTheInternational.videos = ["363464976", "363465012", "363465063"];
+  valveTheInternational.title = "Valve: The International 2019";
+  valveTheInternational.description =
+    "I had the privilage of working for a short while at one of my favorite companies in the world, Valve. They needed help with some various spots for their giant competition The International. I begged and pleaded for my company to send me over to help, and they did. I absolutely loved every minute of it, and desperately wish to go back one day.";
+  valveTheInternational.imgSrc = "images/valveAllianceTheInternational2019.jpg";
+  videoBoxStorage.push(valveTheInternational);
+
+  //___________________________________________________________________________________
+  let dellTechnologiesWorld = new VideoBox();
+  dellTechnologiesWorld.rank = 0;
+  dellTechnologiesWorld.rankImportance = 0;
+  dellTechnologiesWorld.tags = ["corporate"];
+  dellTechnologiesWorld.videos = ["363467805", "363467702"];
+  dellTechnologiesWorld.title = "Dell Technologies World 2019";
+  dellTechnologiesWorld.description =
+    "2 weeks before my wedding I was asked to fly down to Vegas and work on a few spots for the Dell Technologies World expo. I spent most of my time locked in THE BIGGEST HOTEL ROOM I'VE EVER STAYED IN working on various short social spots. All in all, it was a fantastic experience and I'm glad I got time to finish my wedding vowes in Vegas.";
+  dellTechnologiesWorld.imgSrc = "images/dellTechnologiesWorld.jpg";
+  videoBoxStorage.push(dellTechnologiesWorld);
+
+  //___________________________________________________________________________________
+  let indigoSlateEverywhereExperiences = new VideoBox();
+  indigoSlateEverywhereExperiences.rank = 0;
+  indigoSlateEverywhereExperiences.rankImportance = 1;
+  indigoSlateEverywhereExperiences.tags = ["corporate"];
+  indigoSlateEverywhereExperiences.videos = ["475255857"];
+  indigoSlateEverywhereExperiences.title = "Indigo Slate Everywhere Experiences";
+  indigoSlateEverywhereExperiences.description =
+    "Before lockdown my company worked on elements for several in person events for big companies. But after quarantine started, we found a new opportunity in the virtual events space. My company tasked me with creating an ad to show off our virtual event capabilities. I created all of the motion graphics for this spot in addition to editing it.";
+  indigoSlateEverywhereExperiences.imgSrc = "images/indigoSlateEverywhereExperiences.jpg";
+  videoBoxStorage.push(indigoSlateEverywhereExperiences);
+
+  //___________________________________________________________________________________
+  let indigoSlateDesignLedThinking = new VideoBox();
+  indigoSlateDesignLedThinking.rank = 0;
+  indigoSlateDesignLedThinking.rankImportance = 0;
+  indigoSlateDesignLedThinking.tags = ["corporate"];
+  indigoSlateDesignLedThinking.videos = ["475254162"];
+  indigoSlateDesignLedThinking.title = "Indigo Slate Design-Led Thinking";
+  indigoSlateDesignLedThinking.description =
+    "This was a fun project because it features many of my previous videos with the company so I got to kind of take a walk down memory lane. I edited this video, in addition to creating the motion graphics and recording the voice over narration.";
+  indigoSlateDesignLedThinking.imgSrc = "images/indigoSlateDesignLedThinking.jpg";
+  videoBoxStorage.push(indigoSlateDesignLedThinking);
+
+  //___________________________________________________________________________________
+  let paccarFutureSales = new VideoBox();
+  paccarFutureSales.rank = 0;
+  paccarFutureSales.rankImportance = 1;
+  paccarFutureSales.tags = ["corporate", "technology"];
+  paccarFutureSales.videos = ["475252039"];
+  paccarFutureSales.title = "PACCAR Future Sales";
+  paccarFutureSales.description =
+    "A fun video that I edited for PACCAR that also involved a lot of motion tracking and rotoscoping.";
+  paccarFutureSales.imgSrc = "images/paccarFutureSales.jpg";
+  videoBoxStorage.push(paccarFutureSales);
+
+  //___________________________________________________________________________________
+  let sapConcurCustomerTrust = new VideoBox();
+  sapConcurCustomerTrust.rank = 0;
+  sapConcurCustomerTrust.rankImportance = 1;
+  sapConcurCustomerTrust.tags = ["corporate"];
+  sapConcurCustomerTrust.videos = ["363464400"];
+  sapConcurCustomerTrust.title = "SAP Concur Customer Trust";
+  sapConcurCustomerTrust.description =
+    "This was a fun short project to edit, it mostly involved a lot of camera stabilization and simple text design, but it was a fun day to be on set for.";
+  sapConcurCustomerTrust.imgSrc = "images/SAPConcurCustomerTrust.jpg";
+  videoBoxStorage.push(sapConcurCustomerTrust);
+
+  //___________________________________________________________________________________
+  let microsoftProjectHanover = new VideoBox();
+  microsoftProjectHanover.rank = 0;
+  microsoftProjectHanover.rankImportance = 1;
+  microsoftProjectHanover.tags = ["corporate", "technology"];
+  microsoftProjectHanover.videos = ["363461298"];
+  microsoftProjectHanover.title = "Microsoft AI Project Hanover";
+  microsoftProjectHanover.description =
+    "This was one of the last videos I edited during my short time freelancing for Motion Forge in Seattle. Not a super flashy cut, but I found the subject matter to be super interesting.";
+  microsoftProjectHanover.imgSrc = "images/microsoftAIProjectHanover.jpg";
+  videoBoxStorage.push(microsoftProjectHanover);
+
+  //___________________________________________________________________________________
+  let microsoftAILoblaw = new VideoBox();
+  microsoftAILoblaw.rank = 0;
+  microsoftAILoblaw.rankImportance = 0;
+  microsoftAILoblaw.tags = ["corporate", "technology"];
+  microsoftAILoblaw.videos = ["363463375"];
+  microsoftAILoblaw.title = "Microsoft AI Loblaw";
+  microsoftAILoblaw.description =
+    "One of the first videos I edited for Motion Forge in Seattle. It was a great experience that taught me a lot about greenscreen work, and helped me continue to improve my motion tracking skills.";
+  microsoftAILoblaw.imgSrc = "images/microsoftAI-Loblaw.jpg";
+  videoBoxStorage.push(microsoftAILoblaw);
+
+  //___________________________________________________________________________________
+  let microsoftAIBDM = new VideoBox();
+  microsoftAIBDM.rank = 0;
+  microsoftAIBDM.rankImportance = 0;
+  microsoftAIBDM.tags = ["corporate", "technology"];
+  microsoftAIBDM.videos = ["363462269"];
+  microsoftAIBDM.title = "Microsoft AI BDM";
+  microsoftAIBDM.description =
+    "The main thing I remember about cutting this video, SO MANY SLIDING PANELS! It was a bit of a pain to make small adjustments during versions because it would effect hundreds of keyframes down the line, but it turned out great.";
+  microsoftAIBDM.imgSrc = "images/microsoftAI-BDM.jpg";
+  videoBoxStorage.push(microsoftAIBDM);
+
+  //___________________________________________________________________________________
+  let microsoftGOSHTeamUp = new VideoBox();
+  microsoftGOSHTeamUp.rank = 0;
+  microsoftGOSHTeamUp.rankImportance = 0;
+  microsoftGOSHTeamUp.tags = ["corporate", "technology"];
+  microsoftGOSHTeamUp.videos = ["475253473"];
+  microsoftGOSHTeamUp.title = "Microsoft GOSH Team Up";
+  microsoftGOSHTeamUp.description =
+    "There's something about smilling kids that makes me a bit teary. It was a pleasure to get to work on this, mainly to find out how great of a place GOSH is.";
+  microsoftGOSHTeamUp.imgSrc = "images/microsoftGOSHTeamUp.jpg";
+  videoBoxStorage.push(microsoftGOSHTeamUp);
+
+  //___________________________________________________________________________________
+  let xboxAdaptiveController = new VideoBox();
+  xboxAdaptiveController.rank = 0;
+  xboxAdaptiveController.rankImportance = 0;
+  xboxAdaptiveController.tags = ["corporate", "technology"];
+  xboxAdaptiveController.videos = ["363466498"];
+  xboxAdaptiveController.title = "Xbox Adaptive Controller";
+  xboxAdaptiveController.description =
+    "The team that created the packaging for the Xbox Adaptive Controller won an award, so we had a short time to pull a video together that would play during their acceptance. I think it turned out rather nice.";
+  xboxAdaptiveController.imgSrc = "images/xboxAdaptiveController.jpg";
+  videoBoxStorage.push(xboxAdaptiveController);
+
+  //___________________________________________________________________________________
+  let microsoftSmartSpaces = new VideoBox();
+  microsoftSmartSpaces.rank = 0;
+  microsoftSmartSpaces.rankImportance = 1;
+  microsoftSmartSpaces.tags = ["corporate", "technology"];
+  microsoftSmartSpaces.videos = ["518814848"];
+  microsoftSmartSpaces.title = "Microsoft Smart Spaces";
+  microsoftSmartSpaces.description =
+    "This was a very fun video to edit, and I also got to create a ton of motion tracked graphics throughout. Additionally, the shot of the thermometer at the end is the first fully 3D element I got to finish in a video for Indigo Slate.";
+  microsoftSmartSpaces.imgSrc = "images/microsoftSmartSpaces.jpg";
+  videoBoxStorage.push(microsoftSmartSpaces);
+
+  //___________________________________________________________________________________
+  let skypeMeetNow = new VideoBox();
+  skypeMeetNow.rank = 0;
+  skypeMeetNow.rankImportance = 4;
+  skypeMeetNow.tags = ["corporate"];
+  skypeMeetNow.videos = ["475257653"];
+  skypeMeetNow.title = "Skype Meet Now";
+  skypeMeetNow.description =
+    "The fact that we were able to pull this all together while working remotely in such a short time was a total team effort. I'm very happy to have been given the chance to make this become a reality. And I found a place to put my wife's voice in again, she is the person saying 'did you fall asleep?'.";
+  skypeMeetNow.imgSrc = "images/skypeMeetNow.jpg";
+  videoBoxStorage.push(skypeMeetNow);
+
+  //___________________________________________________________________________________
+  let microsoft365Deployment = new VideoBox();
+  microsoft365Deployment.rank = 0;
+  microsoft365Deployment.rankImportance = 0;
+  microsoft365Deployment.tags = ["corporate", "technology"];
+  microsoft365Deployment.videos = ["400813202"];
+  microsoft365Deployment.title = "Microsoft M365 Deployment";
+  microsoft365Deployment.description =
+    "I can't remember what camera we shot this on, I think it was the RED epic? Whichever camera it was, it became a nightmare to deal with 6k footage in Premiere.";
+  microsoft365Deployment.imgSrc = "images/microsoft365Deployment.jpg";
+  videoBoxStorage.push(microsoft365Deployment);
+
+  //___________________________________________________________________________________
+  let microsoft365PartnerVideos = new VideoBox();
+  microsoft365PartnerVideos.rank = 0;
+  microsoft365PartnerVideos.rankImportance = 0;
+  microsoft365PartnerVideos.tags = ["corporate", "technology"];
+  microsoft365PartnerVideos.videos = ["518814473", "518815084", "518815191"];
+  microsoft365PartnerVideos.title = "Microsoft M365 Partner Videos";
+  microsoft365PartnerVideos.description =
+    "A fun little project consisting of 3 seperate but connected videos that gave me an opportunity to learn how to replace screens properly.";
+  microsoft365PartnerVideos.imgSrc = "images/microsoft365PartnerVideos.jpg";
+  videoBoxStorage.push(microsoft365PartnerVideos);
+
+  //___________________________________________________________________________________
+  let microsoftAzureAD20Years = new VideoBox();
+  microsoftAzureAD20Years.rank = 0;
+  microsoftAzureAD20Years.rankImportance = 2;
+  microsoftAzureAD20Years.tags = ["corporate", "technology"];
+  microsoftAzureAD20Years.videos = ["518814623"];
+  microsoftAzureAD20Years.title = "Microsoft Azure AD 20 Years";
+  microsoftAzureAD20Years.description =
+    "This was right at the beginning of my employment at Indigo Slate. A fun little 'documentary' style video that taught me a lot about longer format videos. Also the main guy, Stuart, had a really adorable canadian accent.";
+  microsoftAzureAD20Years.imgSrc = "images/microsoftAzureAD20Years.jpg";
+  videoBoxStorage.push(microsoftAzureAD20Years);
+
+  //___________________________________________________________________________________
+  let microsoft365MobileProductivity = new VideoBox();
+  microsoft365MobileProductivity.rank = 0;
+  microsoft365MobileProductivity.rankImportance = 5;
+  microsoft365MobileProductivity.tags = ["corporate", "technology"];
+  microsoft365MobileProductivity.videos = ["516839250"];
+  microsoft365MobileProductivity.title = "Microsoft M365 Mobile Productivity";
+  microsoft365MobileProductivity.description =
+    "Easily my favorite video I've made for Indigo Slate yet. It involved lots of very challenging screen replacements, and stitching together a cohesive story that involved several characters. Also, I got to record the VO for this one too!";
+  microsoft365MobileProductivity.imgSrc = "images/microsoft365MobileProductivity.jpg";
+  videoBoxStorage.push(microsoft365MobileProductivity);
+
+  //___________________________________________________________________________________
+  let microsoftBuildingBuild = new VideoBox();
+  microsoftBuildingBuild.rank = 0;
+  microsoftBuildingBuild.rankImportance = 3;
+  microsoftBuildingBuild.tags = ["corporate", "technology"];
+  microsoftBuildingBuild.videos = ["521752909"];
+  microsoftBuildingBuild.title = "Microsoft Building Build";
+  microsoftBuildingBuild.description =
+    "Microsoft Build 2020 was already far along in it's preperation when the pandemic hit, causing them to halt everything and move to a virtual event. We documented what it took to make that happen. This is the longest narrative video I've cut for Indigo Slate, and it was an absolute pleasure to work on.";
+  microsoftBuildingBuild.imgSrc = "images/microsoftBuildingBuild.jpg";
+  videoBoxStorage.push(microsoftBuildingBuild);
 })();
 
 //functions below here
