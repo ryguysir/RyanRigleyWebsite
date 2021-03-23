@@ -1,60 +1,78 @@
-<!DOCTYPE html lang="en">
-  <head>
-    <title>Ryan Rigley</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="./css/aboutMeStyle.css">
+  <script src="./scripts/aboutMeMain.js" defer></script>
+  <title>Ryan Rigley</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="/scripts/main.js" defer></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </head>
-  <body>
-    <div id="background">
-      <div id="backgroundLayer1"></div>
-      <div id="backgroundLayer2"></div>
+</head>
+<body>
+  
+<!-- top area -->
+<div class="section">
+  <div class="videoTextBox">
+    <span class="videoTextBoxHeader">
+      About Me
+    </span>
+
+    <span class="videoTextBoxBody">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula luctus fringilla. Fusce semper blandit massa, sed facilisis dolor.
+    </span>
+
+    <div id="bttnHolder">
+      
+      <div class="aboutMeBttn" onclick="window.location.href='/myWork.html'">View my work</div>
+      <div class="aboutMeBttn" onclick="scrollToContactMe()">Contact me</div>
     </div>
-    <div id="siteContainer">
-      <lottie-player
-        id="headerLottieTitle"
-        src="https://assets4.lottiefiles.com/packages/lf20_cwcbkcbw.json"
-        autoplay
-      ></lottie-player>
 
-      <div id="searchBoxContainer">
-        <div id="searchBoxFlex">
-          <input type="text" id="searchBox" />
-          <div id="searchSubmit" onclick="searchBox()">Submit</div>
-        </div>
-      </div>
+    <div id="arrowDown"></div>
+  </div>
+  <video id="standingUpVid" class="video" muted autobuffer preload="auto">
+    <source src="./videos/Standing Up.mp4" type='video/mp4' />
+  </video>
+</div>
 
-      <div id="tagContainer">
-        <div class="tag">Corporate</div>
-        <div class="tag">Technology</div>
-        <div class="tag">Action</div>
-        <div class="tag">Adventure</div>
-        <div class="tag">Drama</div>
-        <div class="tag">Romance</div>
-        <div class="tag">Horror</div>
-        <div class="tag">Sci-Fi</div>
-        <div class="tag">Comedy</div>
-        <div class="tag">Historical</div>
-        <div class="tag search">Search</div>
-        <div class="tag a2z">Browse All</div>
-      </div>
-      <lottie-player
-        id="loopingLottie"
-        src="https://assets1.lottiefiles.com/packages/lf20_3rjibo7e.json"
-        autoplay
-        loop
-      ></lottie-player>
+<!-- video editor -->
+<div class="section header">
+  
+  <video id="test" class="video" autoplay muted loop preload="auto">
+    <source src="./videos/Video Editor Reel.mp4" type='video/mp4' />
+  </video>
+  
+  <div class="videoTextBox">
+    <span class="videoTextBoxHeader">
+      Video Editor
+    </span>
 
-      <div id="videoBoxContainer"></div>
-    </div>
-  </body>
+    <span class="videoTextBoxBody">
+      this is a test for the video editor section of the page
+      
+    </span>
+
+  </div>
+</div>
+
+<!-- contact me -->
+<div id="contactMe">
+  
+    <form action="https://formspree.io/f/meqpyddp" method="POST" class="contactMe">
+      <h1>Reach out &#128235</h1>
+      <label>
+        E-mail
+        <input type="email" class="email" name="_replyto" autocomplete="off" />
+      </label>
+      <label>
+        Message
+        <textarea class="message" name="message"></textarea>
+      </label>
+      <div class="status"></div>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+</div>
+</body>
 </html>
+
