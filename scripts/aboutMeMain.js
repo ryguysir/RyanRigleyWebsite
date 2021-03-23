@@ -21,7 +21,7 @@ document.getElementsByClassName("submit")[0].addEventListener("click", (event) =
 
 function scrollPlayVid() {
   let video = document.getElementById("standingUpVid");
-  let frameRate = 24;
+  let frameRate = 60;
 
   let curTime = video.duration * (window.scrollY / window.innerHeight);
   if (isNaN(curTime)) {
