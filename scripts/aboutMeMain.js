@@ -19,23 +19,24 @@ document.getElementsByClassName("submit")[0].addEventListener("click", (event) =
   }
 });
 
-function scrollPlayVid() {
-  let video = document.getElementById("standingUpVid");
-  let frameRate = 60;
-
-  let curTime = video.duration * (window.scrollY / window.innerHeight);
-  if (isNaN(curTime)) {
-    curTime = 0;
-  }
-  let unRounded = curTime - Math.floor(curTime).toFixed(3);
-  let rounded = Math.floor(unRounded * frameRate) / frameRate + Math.floor(curTime);
-  video.currentTime = rounded;
-
-  requestAnimationFrame(scrollPlayVid);
-}
-requestAnimationFrame(scrollPlayVid);
-
 function scrollToContactMe() {
   let contactMe = document.getElementsByClassName("contactMe")[0].getBoundingClientRect().top;
   window.scroll(0, contactMe);
 }
+
+let video = document.getElementById("standingUpVid");
+let accelamount = 0.35;
+let scrollPos = 0;
+let delay = 0;
+
+window.addEventListener("scroll", (el) => {
+  scrollPos = video.duration * (window.scrollY / window.innerHeight);
+});
+
+setInterval(() => {
+  delay += (scrollPos - delay) * accelamount;
+  if (isNaN(delay)) {
+    delay = 0;
+  }
+  video.currentTime = delay;
+}, 1000 / 24);
