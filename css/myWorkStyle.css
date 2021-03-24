@@ -3,7 +3,7 @@
   --second-color: rgb(109, 200, 228);
   --third-color: rgb(179, 179, 255);
   --fourth-color: #eba2a8;
-  --offWhite-color: rgba(220, 220, 255, 1);
+  --offWhite-color: rgba(235, 235, 235, 1);
 }
 
 html,
@@ -26,39 +26,21 @@ body {
   height: 100vh;
   overflow: hidden;
   z-index: -302;
-  background: rgba(110, 71, 225, 0.5);
-}
-
-#backgroundLayer1 {
-  animation: 10s backgroundFadeIn linear infinite;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -301;
-  background: linear-gradient(225deg, rgba(255, 92, 171, 1) 0%, rgba(62, 181, 68, 1) 100%);
-}
-
-#backgroundLayer2 {
-  animation: 10s backgroundFadeIn linear infinite;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -300;
-  background: linear-gradient(135deg, rgba(251, 228, 0, 1) 0%, rgba(110, 71, 225, 1) 80%);
-  mix-blend-mode: soft-light;
+  background: #2c3e50;
 }
 
 #returnBox {
   display: flex;
   margin: 5%;
   align-items: center;
+  justify-content: center;
 }
 
 #returnArrow {
   position: relative;
   background: var(--offWhite-color);
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 
   clip-path: polygon(56% 4%, 60% 0%, 100% 50%, 60% 100%, 56% 96%, 94% 50%);
   transform: rotate(180deg);
@@ -70,19 +52,10 @@ body {
   user-select: none;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1.5em;
 }
 #returnArrowText:hover {
   transform: scale(1.05);
-}
-
-#headerLottieTitle {
-  position: relative;
-  width: 720px;
-  height: 190px;
-  transform: scale(0.5);
-  margin: 0 auto;
-  margin-bottom: -20px;
-  margin-top: -80px;
 }
 
 #loopingLottie {
@@ -181,8 +154,7 @@ body {
   padding: 0.5em 1em 0.5em 1em;
   margin: 0.5em;
   background: var(--third-color);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   cursor: pointer;
 }
 #searchSubmit:hover {
@@ -216,13 +188,11 @@ body {
   font-weight: 300;
   border-radius: 12px;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -6px 6px,
-    rgba(240, 46, 170, 0.1) -9px 9px;
+  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -6px 6px, rgba(240, 46, 170, 0.1) -9px 9px;
 }
 .videoBox:hover {
   border-radius: 20px;
-  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px,
-    rgba(240, 46, 170, 0.1) -18px 18px;
+  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px, rgba(240, 46, 170, 0.1) -18px 18px;
 }
 
 .videoBox iframe {
@@ -318,10 +288,8 @@ body {
   padding: 0.5em;
   margin: 0.5em;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.4) -2px 2px,
-    rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.4) -4px 4px,
-    rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
-    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
+  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.4) -4px 4px,
+    rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
   cursor: pointer;
 }
 
@@ -330,12 +298,12 @@ body {
 }
 
 .tag:hover::after {
-  animation: tagCircle 0.5s ease-in-out;
+  animation: tagCircle 0.8s ease-in-out;
   content: "";
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: #3f9e82;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -344,11 +312,10 @@ body {
 
 .tagToggled {
   color: var(--offWhite-color);
-  background: rgb(73, 73, 73);
+  background: #803e68;
   border-radius: 8px;
-  box-shadow: rgba(59, 59, 59, 0.4) -2px 2px, rgba(59, 59, 59, 0.4) -4px 4px,
-    rgba(75, 75, 75, 0.3) -6px 6px, rgba(39, 39, 39, 0.4) -8px 8px, rgba(32, 32, 32, 0.2) -10px 10px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(27, 27, 27, 0.25) 0px 0px 2px inset;
+  box-shadow: rgba(59, 59, 59, 0.4) -2px 2px, rgba(59, 59, 59, 0.4) -4px 4px, rgba(75, 75, 75, 0.3) -6px 6px, rgba(39, 39, 39, 0.4) -8px 8px,
+    rgba(32, 32, 32, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(27, 27, 27, 0.25) 0px 0px 2px inset;
 }
 
 .a2z {
@@ -424,15 +391,6 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  #headerLottieTitle {
-    position: relative;
-    margin: 0 auto;
-    width: 100vw;
-    transform-origin: center;
-    transform: scale(0.75);
-    margin-bottom: -50px;
-    margin-top: -50px;
-  }
   #loopingLottie {
     top: -20%;
   }
