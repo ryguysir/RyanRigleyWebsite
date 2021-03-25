@@ -1,3 +1,10 @@
+//this moves the reveal block out of the way on page load
+window.addEventListener("load", () => {
+  let pageReveal = document.getElementById("pageReveal");
+  pageReveal.style.transform = "translateY(-100%)";
+});
+
+//this submits the contact me form
 document.getElementsByClassName("submit")[0].addEventListener("click", (event) => {
   let email = document.getElementsByClassName("email")[0].value;
   let message = document.getElementsByClassName("message")[0].value;
@@ -19,11 +26,13 @@ document.getElementsByClassName("submit")[0].addEventListener("click", (event) =
   }
 });
 
+//this scrolls to the contact me section when the button is clicked
 function scrollToContactMe() {
   let contactMe = document.getElementsByClassName("contactMe")[0].getBoundingClientRect().top;
   window.scroll(0, contactMe);
 }
 
+//this sets the video position to the scroll position
 let video = document.getElementById("standingUpVid");
 let accelamount = 0.35;
 let scrollPos = 0;

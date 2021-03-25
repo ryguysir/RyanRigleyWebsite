@@ -8,9 +8,20 @@ html {
 
 /* main color design */
 :root {
-  --darkBlue: #007da8;
+  --darkBlue: #2c3e50;
   --lightBlue: #05a0d1;
   --offWhite: rgb(225, 225, 225);
+  --limeGreen: rgba(0, 193, 102, 1);
+}
+
+#pageReveal {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+
+  background: var(--darkBlue);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }
 
 .section {
@@ -28,7 +39,7 @@ html {
 .video {
   position: relative;
   height: 100vh;
-  opacity: 0.75;
+  opacity: 1;
 }
 
 .videoTextBox {
@@ -50,7 +61,7 @@ html {
   font-size: 200%;
   color: var(--offWhite);
   margin: 3%;
-  background: var(--lightBlue);
+  background: var(--limeGreen);
   padding: 0.5em 2em;
   position: relative;
   top: -5%;
@@ -80,17 +91,17 @@ html {
   border-radius: 4px;
   border-left: transparent 1px solid;
   border-right: transparent 1px solid;
-  border-top: var(--offWhite) 1px solid;
-  border-bottom: var(--offWhite) 1px solid;
+  border-top: var(--limeGreen) 1px solid;
+  border-bottom: var(--limeGreen) 1px solid;
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
 }
 .aboutMeBttn:hover {
   transform: scale(1.1);
-  border-left: var(--offWhite) 1px solid;
-  border-right: var(--offWhite) 1px solid;
-  border-top: var(--offWhite) 1px solid;
+  border-left: var(--limeGreen) 1px solid;
+  border-right: var(--limeGreen) 1px solid;
+  border-top: var(--limeGreen) 1px solid;
 }
 
 #arrowDown {

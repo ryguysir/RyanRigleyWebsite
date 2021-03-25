@@ -4,6 +4,7 @@
   --third-color: rgb(179, 179, 255);
   --fourth-color: #eba2a8;
   --offWhite-color: rgba(235, 235, 235, 1);
+  --darkBlue: #2c3e50;
 }
 
 html,
@@ -188,7 +189,8 @@ body {
   font-weight: 300;
   border-radius: 12px;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.2) -6px 6px, rgba(240, 46, 170, 0.1) -9px 9px;
+  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -2px 2px, rgba(0, 193, 102, 0.3) -3px 3px, rgba(0, 193, 102, 0.4) -4px 4px,
+    rgba(0, 193, 102, 0.2) -5px 5px;
 }
 .videoBox:hover {
   border-radius: 20px;
@@ -204,8 +206,9 @@ body {
   animation: fadeInScaleIn 1s ease-in-out;
   margin: 5% 5% 10% 5%;
   text-align: center;
-  background: rgba(200, 200, 235, 1);
+  background: hsl(210, 29%, 80%);
   padding: 20px;
+  border-radius: 0.25em;
 }
 
 .videoBox .title {
@@ -288,8 +291,8 @@ body {
   padding: 0.5em;
   margin: 0.5em;
   background: var(--offWhite-color);
-  box-shadow: rgba(240, 46, 170, 0.4) -1px 1px, rgba(240, 46, 170, 0.4) -2px 2px, rgba(240, 46, 170, 0.3) -3px 3px, rgba(240, 46, 170, 0.4) -4px 4px,
-    rgba(240, 46, 170, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
+  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -2px 2px, rgba(0, 193, 102, 0.3) -3px 3px, rgba(0, 193, 102, 0.4) -4px 4px,
+    rgba(0, 193, 102, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
   cursor: pointer;
 }
 
@@ -303,7 +306,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #3f9e82;
+  background: rgba(0, 193, 102, 0.4);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -312,10 +315,11 @@ body {
 
 .tagToggled {
   color: var(--offWhite-color);
-  background: #803e68;
+  background: rgba(240, 46, 170, 1);
   border-radius: 8px;
-  box-shadow: rgba(59, 59, 59, 0.4) -2px 2px, rgba(59, 59, 59, 0.4) -4px 4px, rgba(75, 75, 75, 0.3) -6px 6px, rgba(39, 39, 39, 0.4) -8px 8px,
-    rgba(32, 32, 32, 0.2) -10px 10px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(27, 27, 27, 0.25) 0px 0px 2px inset;
+  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -3px 3px, rgba(0, 193, 102, 0.3) -5px 5px, rgba(0, 193, 102, 0.4) -7px 7px,
+    rgba(0, 193, 102, 0.2) -9px 9px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
+  border: 2px rgba(51, 255, 156, 0.5) solid;
 }
 
 .a2z {

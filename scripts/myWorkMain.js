@@ -76,10 +76,7 @@ document.getElementById("searchBox").addEventListener("keypress", (e) => {
 //if escape key is pressed in searchBox, toggle the searchBox to Hidden
 document.onkeydown = function (evt) {
   evt = evt || window.event;
-  if (
-    evt.keyCode == 27 &&
-    document.getElementById("searchBoxContainer").style.display == "inline-block"
-  ) {
+  if (evt.keyCode == 27 && document.getElementById("searchBoxContainer").style.display == "inline-block") {
     document.getElementById("searchBoxContainer").style.display = "none";
     document.getElementsByClassName("search")[0].classList.toggle("tagToggled");
     document.getElementById("loopingLottie").classList.toggle("hidden");
@@ -421,14 +418,7 @@ function VideoBox() {
   petesDragon.rank = 0;
   petesDragon.rankImportance = 3;
   petesDragon.tags = ["adventure", "action", "sci-fi"];
-  petesDragon.videos = [
-    "209164720",
-    "209164565",
-    "209164674",
-    "209164510",
-    "209164480",
-    "209164530",
-  ];
+  petesDragon.videos = ["209164720", "209164565", "209164674", "209164510", "209164480", "209164530"];
   petesDragon.title = "Pete's Dragon";
   petesDragon.description =
     "Before getting Pete's dragon in at Transit, we hadn't had much experience working with the people at Disney. I wanted to deliver something that was different than they had already seen on this campaign, so I decided to take the a cappella song sang by the little girl and turn it into a fully orchestrated song. I guess it went over well, because after Pete's dragon wrapped up we continued to get new projects through Disney.";
@@ -440,16 +430,7 @@ function VideoBox() {
   narcosS1.rank = 0;
   narcosS1.rankImportance = 3;
   narcosS1.tags = ["action", "drama", "netflix", "historical"];
-  narcosS1.videos = [
-    "208256474",
-    "208256554",
-    "208257459",
-    "208256456",
-    "208257500",
-    "208256444",
-    "208256504",
-    "208256434",
-  ];
+  narcosS1.videos = ["208256474", "208256554", "208257459", "208256456", "208257500", "208256444", "208256504", "208256434"];
   narcosS1.title = "Narcos: Season 1";
   narcosS1.description =
     "Narcos: Season 1 was one of the first big projects that I worked on at the beginning of my career. It was an incredibly rewarding experience that won me my first key art award for my solo work on 'just say no'.";
@@ -545,16 +526,7 @@ function VideoBox() {
   theLongestRide.rank = 0;
   theLongestRide.rankImportance = 0;
   theLongestRide.tags = ["drama", "historical", "romance"];
-  theLongestRide.videos = [
-    "208767181",
-    "208767145",
-    "208767760",
-    "208767783",
-    "208768229",
-    "208767210",
-    "208767799",
-    "208767812",
-  ];
+  theLongestRide.videos = ["208767181", "208767145", "208767760", "208767783", "208768229", "208767210", "208767799", "208767812"];
   theLongestRide.title = "The Longest Ride";
   theLongestRide.description =
     "Oh boy, this really put the pain in TV campaign. I started out assisting an editor on the trailer for this film, and by the end of the project I was solely in charge of the entire TV campaign. It was a lot of work, but the pay off was getting many of my first finished TV spots that more or less started my career. I was also convinced this would be Britt Robertson's big break... what happened to her?";
@@ -724,8 +696,7 @@ function VideoBox() {
   paccarFutureSales.tags = ["corporate", "technology"];
   paccarFutureSales.videos = ["475252039"];
   paccarFutureSales.title = "PACCAR Future Sales";
-  paccarFutureSales.description =
-    "A fun video that I edited for PACCAR that also involved a lot of motion tracking and rotoscoping.";
+  paccarFutureSales.description = "A fun video that I edited for PACCAR that also involved a lot of motion tracking and rotoscoping.";
   paccarFutureSales.imgSrc = "images/paccarFutureSales.jpg";
   videoBoxStorage.push(paccarFutureSales);
 
