@@ -315,11 +315,10 @@ body {
 
 .tagToggled {
   color: var(--offWhite-color);
-  background: rgba(240, 46, 170, 1);
+  background: hsl(321, 60%, 65%);
   border-radius: 8px;
   box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -3px 3px, rgba(0, 193, 102, 0.3) -5px 5px, rgba(0, 193, 102, 0.4) -7px 7px,
     rgba(0, 193, 102, 0.2) -9px 9px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
-  border: 2px rgba(51, 255, 156, 0.5) solid;
 }
 
 .a2z {

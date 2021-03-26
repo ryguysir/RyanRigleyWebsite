@@ -62,7 +62,7 @@ html {
   color: var(--offWhite);
   margin: 3%;
   background: var(--limeGreen);
-  padding: 0.5em 2em;
+  padding: 0.5em 6em;
   position: relative;
   top: -5%;
 }
@@ -85,23 +85,23 @@ html {
   align-items: center;
 }
 .aboutMeBttn {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in;
   color: var(--offWhite);
   padding: 0.5em;
   border-radius: 4px;
-  border-left: transparent 1px solid;
-  border-right: transparent 1px solid;
-  border-top: var(--limeGreen) 1px solid;
-  border-bottom: var(--limeGreen) 1px solid;
+  border-left: transparent 2px solid;
+  border-right: transparent 2px solid;
+  border-top: var(--limeGreen) 2px solid;
+  border-bottom: var(--limeGreen) 2px solid;
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
 }
 .aboutMeBttn:hover {
   transform: scale(1.1);
-  border-left: var(--limeGreen) 1px solid;
-  border-right: var(--limeGreen) 1px solid;
-  border-top: var(--limeGreen) 1px solid;
+  border-left: var(--limeGreen) 2px solid;
+  border-right: var(--limeGreen) 2px solid;
+  border-top: var(--limeGreen) 2px solid;
 }
 
 #arrowDown {
@@ -186,5 +186,32 @@ textarea {
   100% {
     opacity: 0;
     top: calc(100vh - 80px);
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .section {
+    grid-template-columns: 100%;
+  }
+  .videoTextBox {
+    background: rgba(44, 62, 80, 0.5);
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+  .videoTextBoxHeader {
+    white-space: nowrap;
+    background: rgba(0, 193, 102, 0.5);
+    padding: 0.5em 2em;
+    font-size: 180%;
+  }
+  .videoTextBoxBody {
+    background: rgba(44, 62, 80, 0.85);
+    width: calc(75%-2em);
+    padding: 1em 4em;
+  }
+  .video {
+    grid-column: 1/1;
+    grid-row: 1/1;
+    transform: scale(1.025);
   }
 }
