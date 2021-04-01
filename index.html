@@ -1,85 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/aboutMeStyle.css">
   <script src="./scripts/aboutMeMain.js" defer></script>
   <title>Ryan Rigley</title>
 
 </head>
+
 <body>
-  
-  <div id="pageReveal" ></div>
 
-<!-- top area -->
-<div class="section" >
-  
-  <div class="videoTextBox">
-    <span class="videoTextBoxHeader">
-      About Me
-    </span>
+  <div id="pageReveal"></div>
 
-    <span class="videoTextBoxBody">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula luctus fringilla. Fusce semper blandit massa, sed facilisis dolor.
-    </span>
+  <!-- top area -->
+  <div class="section">
 
-    <div id="bttnHolder">
-      
-      <div class="aboutMeBttn" onclick="window.location.href='/myWork.html'">View my work</div>
-      <div class="aboutMeBttn" onclick="scrollToContactMe()">Contact me</div>
+    <div class="videoTextBox">
+
+      <div id="myNameIs">
+        <h1>HELLO</h1>
+        <h2>MY NAME IS</h2>
+      </div>
+
+      <span class="videoTextBoxBody">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula luctus fringilla. Fusce semper blandit
+        massa, sed facilisis dolor.
+      </span>
+
+      <div id="bttnHolder">
+
+        <div class="aboutMeBttn" onclick="window.location.href='/myWork.html'">View my work</div>
+        <div class="aboutMeBttn" onclick="scrollToContactMe()">Contact me</div>
+      </div>
+
+      <div id="arrowDown"></div>
     </div>
-
-    <div id="arrowDown"></div>
+    <video id="standingUpVid" class="video" tabindex="0" muted autobuffer preload="auto">
+      <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="/videos/Maple Leaf Standup_Half Speed.mp4" />
+    </video>
   </div>
-  <video id="standingUpVid" class="video" tabindex="0" muted autobuffer preload="auto">
-    <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="/videos/Standing Up.mp4"  />
-  </video>
-</div>
 
-<!-- video editor -->
-<div class="section header">
-  
-  <video id="test" class="video" muted autoplay loop preload="auto" tabindex="-1" >
-    <source src="./videos/Video Editor Reel.mp4" type='video/mp4' />
-  </video>
-  
-  <div class="videoTextBox">
-    <span class="videoTextBoxHeader">
-      Video Editor
-    </span>
+  <!-- video editor -->
+  <div class="section header">
 
-    <span class="videoTextBoxBody">
-      this is a test for the video editor section of the page
-      
-    </span>
-    <div id="arrowDown"></div>
+    <video id="test" class="video" muted autoplay loop preload="auto" tabindex="-1">
+      <source src="./videos/Video Editor Reel.mp4" type='video/mp4' />
+    </video>
+
+    <div class="videoTextBox">
+      <span class="videoTextBoxHeader">
+        Video Editor
+      </span>
+
+      <span class="videoTextBoxBody">
+        this is a test for the video editor section of the page
+
+      </span>
+      <div id="arrowDown"></div>
+    </div>
   </div>
-</div>
 
-<!-- motion graphics -->
-<div class="section" >
-  
-  <div class="videoTextBox">
-    <span class="videoTextBoxHeader">
-      Motion Graphics
-    </span>
+  <!-- motion graphics -->
+  <div class="section">
 
-    <span class="videoTextBoxBody">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula luctus fringilla. Fusce semper blandit massa, sed facilisis dolor.
-    </span>
-    <div id="arrowDown"></div>
-</div>
-<video id="test" class="video" muted autoplay loop preload="auto" tabindex="-1" >
-  <source src="./videos/Video Editor Reel.mp4" type='video/mp4' />
-</video>
-</div>
+    <div class="videoTextBox">
+      <span class="videoTextBoxHeader">
+        Motion Graphics
+      </span>
 
-<!-- contact me -->
-<div id="contactMe">
-  
+      <span class="videoTextBoxBody">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula luctus fringilla. Fusce semper blandit
+        massa, sed facilisis dolor.
+      </span>
+      <div id="arrowDown"></div>
+    </div>
+    <video id="test" class="video" muted autoplay loop preload="auto" tabindex="-1">
+      <source src="./videos/Motion Graphics Reel.mp4" type='video/mp4' />
+    </video>
+  </div>
+
+  <!-- contact me -->
+  <div id="contactMe">
+
     <form action="https://formspree.io/f/meqpyddp" method="POST" class="contactMe">
       <h1>Reach out &#128235</h1>
       <label>
@@ -93,9 +101,8 @@
       <div class="status"></div>
       <button type="submit" class="submit">Submit</button>
     </form>
-</div>
+  </div>
 
 </body>
+
 </html>
-
-

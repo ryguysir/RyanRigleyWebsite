@@ -49,6 +49,20 @@ allTags.forEach((e) => {
       return;
     }
 
+    //if tag is awards, sort only projects with awards
+    if (event.srcElement.innerHTML == "Awards") {
+      if (event.srcElement.classList.contains("tagToggled")) {
+        removeAllChildNodes(document.getElementById("videoBoxContainer"));
+        event.srcElement.classList.toggle("tagToggled");
+        document.getElementById("loopingLottie").style.display = "block";
+        return;
+      }
+      document.getElementById("loopingLottie").style.display = "none";
+      event.srcElement.classList.toggle("tagToggled");
+      awardSearch();
+      return;
+    }
+
     //if tag is NOT search, add tag to allTagsSearchList and preform tagSearch function
     event.srcElement.classList.toggle("tagToggled");
     if (document.getElementsByClassName("a2z")[0].classList.contains("tagToggled")) {
@@ -76,7 +90,10 @@ document.getElementById("searchBox").addEventListener("keypress", (e) => {
 //if escape key is pressed in searchBox, toggle the searchBox to Hidden
 document.onkeydown = function (evt) {
   evt = evt || window.event;
-  if (evt.keyCode == 27 && document.getElementById("searchBoxContainer").style.display == "inline-block") {
+  if (
+    evt.keyCode == 27 &&
+    document.getElementById("searchBoxContainer").style.display == "inline-block"
+  ) {
     document.getElementById("searchBoxContainer").style.display = "none";
     document.getElementsByClassName("search")[0].classList.toggle("tagToggled");
     document.getElementById("loopingLottie").classList.toggle("hidden");
@@ -93,6 +110,8 @@ function VideoBox() {
   this.title = "";
   this.description = "";
   this.imgSrc = "";
+  //1 == clio award  2 == golden trailer award
+  this.award = 0;
 
   this.create = function createVideoBox(videos) {
     let videoBox = document.createElement("div");
@@ -143,6 +162,18 @@ function VideoBox() {
       lottie.setAttribute("class", "lottiePlay");
       videoBoxImageContainer.appendChild(lottie);
     }
+
+    //add a clio award if applicable
+    if (this.award == 1) {
+      let award = document.createElement("lottie-player");
+      award.loop = true;
+      award.autoplay = true;
+      award.src = "https://assets7.lottiefiles.com/packages/lf20_howv2r3o.json";
+      award.controls = false;
+      award.setAttribute("class", "award");
+      videoBox.appendChild(award);
+    }
+
     //attach the videobox to the DOM
     document.getElementById("videoBoxContainer").appendChild(videoBox);
     videoImage.addEventListener("load", () => {
@@ -206,6 +237,7 @@ function VideoBox() {
   narcosS2.description =
     "I worked on the TV campaign for the first season of Narcos, but it wasn't until Season 2 that I got the chance to create this trailer. The first version had a custom song made for it based off Paul Mccartney's 007 theme for Live and Let Die, but due to some legal reasons we had to find an ALT. I thought we'd never find something as good until our music supervisor suggested this track by Styx. I still love this song, and this trailer to this day.";
   narcosS2.imgSrc = "images/narcosSeason2.jpg";
+  narcosS2.award = 2;
   videoBoxStorage.push(narcosS2);
 
   //___________________________________________________________________________________
@@ -327,6 +359,7 @@ function VideoBox() {
   theGetDown.description =
     "This is still one of the only musical projects I ever worked on, I wish I was able to work on more. Jaden Smith was fantastic in this show, and I highly suggest checking it out.";
   theGetDown.imgSrc = "images/theGetDown.jpg";
+  theGetDown.award = 1;
   videoBoxStorage.push(theGetDown);
 
   //___________________________________________________________________________________
@@ -351,6 +384,7 @@ function VideoBox() {
   rampage.description =
     "I worked on an awesome trailer for this film for weeks on end that sadly didn't end up getting selected as a finish. It was set to a custom mix of War Pigs by Black Sabbath and Whole Lotta Love by Led Zeppelin which was absolutely fantastic. Although I didn't get the trailer finish, I did work on several TV spots directly with Dwayne Johnson (I'm the editor he's referring to), and those led to a few pieces with Dwayne's company Seven Bucks Productions after I left Transit.";
   rampage.imgSrc = "images/rampage.jpg";
+  rampage.award = 1;
   videoBoxStorage.push(rampage);
 
   //___________________________________________________________________________________
@@ -418,7 +452,14 @@ function VideoBox() {
   petesDragon.rank = 0;
   petesDragon.rankImportance = 3;
   petesDragon.tags = ["adventure", "action", "sci-fi"];
-  petesDragon.videos = ["209164720", "209164565", "209164674", "209164510", "209164480", "209164530"];
+  petesDragon.videos = [
+    "209164720",
+    "209164565",
+    "209164674",
+    "209164510",
+    "209164480",
+    "209164530",
+  ];
   petesDragon.title = "Pete's Dragon";
   petesDragon.description =
     "Before getting Pete's dragon in at Transit, we hadn't had much experience working with the people at Disney. I wanted to deliver something that was different than they had already seen on this campaign, so I decided to take the a cappella song sang by the little girl and turn it into a fully orchestrated song. I guess it went over well, because after Pete's dragon wrapped up we continued to get new projects through Disney.";
@@ -430,11 +471,21 @@ function VideoBox() {
   narcosS1.rank = 0;
   narcosS1.rankImportance = 3;
   narcosS1.tags = ["action", "drama", "netflix", "historical"];
-  narcosS1.videos = ["208256474", "208256554", "208257459", "208256456", "208257500", "208256444", "208256504", "208256434"];
+  narcosS1.videos = [
+    "208256474",
+    "208256554",
+    "208257459",
+    "208256456",
+    "208257500",
+    "208256444",
+    "208256504",
+    "208256434",
+  ];
   narcosS1.title = "Narcos: Season 1";
   narcosS1.description =
     "Narcos: Season 1 was one of the first big projects that I worked on at the beginning of my career. It was an incredibly rewarding experience that won me my first key art award for my solo work on 'just say no'.";
   narcosS1.imgSrc = "images/narcosSeason1.jpg";
+  narcosS1.award = 1;
   videoBoxStorage.push(narcosS1);
 
   //___________________________________________________________________________________
@@ -459,6 +510,7 @@ function VideoBox() {
   xMenDaysofFuturePast.description =
     "I maintain this is one of the best Xmen movies they made. It was fun, had creative fight scenes and set pieces, and had an all star cast. I won a silver key art award for my motion graphics work on this one.";
   xMenDaysofFuturePast.imgSrc = "images/xMenDaysOfFuturePast.jpg";
+  xMenDaysofFuturePast.award = 1;
   videoBoxStorage.push(xMenDaysofFuturePast);
 
   //___________________________________________________________________________________
@@ -495,6 +547,7 @@ function VideoBox() {
   theWolverine.description =
     "I'm a big Marvel fan, so I would jump at any opportunity to work on one of their movies. I ended up getting a bronze key art award for one of my spots for The Wolverine.";
   theWolverine.imgSrc = "images/theWolverine.jpg";
+  theWolverine.award = 1;
   videoBoxStorage.push(theWolverine);
 
   //___________________________________________________________________________________
@@ -526,7 +579,16 @@ function VideoBox() {
   theLongestRide.rank = 0;
   theLongestRide.rankImportance = 0;
   theLongestRide.tags = ["drama", "historical", "romance"];
-  theLongestRide.videos = ["208767181", "208767145", "208767760", "208767783", "208768229", "208767210", "208767799", "208767812"];
+  theLongestRide.videos = [
+    "208767181",
+    "208767145",
+    "208767760",
+    "208767783",
+    "208768229",
+    "208767210",
+    "208767799",
+    "208767812",
+  ];
   theLongestRide.title = "The Longest Ride";
   theLongestRide.description =
     "Oh boy, this really put the pain in TV campaign. I started out assisting an editor on the trailer for this film, and by the end of the project I was solely in charge of the entire TV campaign. It was a lot of work, but the pay off was getting many of my first finished TV spots that more or less started my career. I was also convinced this would be Britt Robertson's big break... what happened to her?";
@@ -633,12 +695,13 @@ function VideoBox() {
   let theSecretLifeofWalterMitty = new VideoBox();
   theSecretLifeofWalterMitty.rank = 0;
   theSecretLifeofWalterMitty.rankImportance = 3;
-  theSecretLifeofWalterMitty.tags = ["adventure", "drama", "romance"];
+  theSecretLifeofWalterMitty.tags = ["adventure", "drama", "romance", "comedy"];
   theSecretLifeofWalterMitty.videos = ["208428637", "208428618"];
   theSecretLifeofWalterMitty.title = "The Secret Life Of Walter Mitty";
   theSecretLifeofWalterMitty.description =
     "I mainly worked as a motion graphics artist for this campaign, and I ended up winning the Grand Key Art award for my spot Tumblr DHD.";
   theSecretLifeofWalterMitty.imgSrc = "images/theSecretLifeofWalterMitty.jpg";
+  theSecretLifeofWalterMitty.award = 1;
   videoBoxStorage.push(theSecretLifeofWalterMitty);
 
   //___________________________________________________________________________________
@@ -696,7 +759,8 @@ function VideoBox() {
   paccarFutureSales.tags = ["corporate", "technology"];
   paccarFutureSales.videos = ["475252039"];
   paccarFutureSales.title = "PACCAR Future Sales";
-  paccarFutureSales.description = "A fun video that I edited for PACCAR that also involved a lot of motion tracking and rotoscoping.";
+  paccarFutureSales.description =
+    "A fun video that I edited for PACCAR that also involved a lot of motion tracking and rotoscoping.";
   paccarFutureSales.imgSrc = "images/paccarFutureSales.jpg";
   videoBoxStorage.push(paccarFutureSales);
 
@@ -855,6 +919,18 @@ function VideoBox() {
     "Microsoft Build 2020 was already far along in it's preperation when the pandemic hit, causing them to halt everything and move to a virtual event. We documented what it took to make that happen. This is the longest narrative video I've cut for Indigo Slate, and it was an absolute pleasure to work on.";
   microsoftBuildingBuild.imgSrc = "images/microsoftBuildingBuild.jpg";
   videoBoxStorage.push(microsoftBuildingBuild);
+
+  //___________________________________________________________________________________
+  let sapSizzle = new VideoBox();
+  sapSizzle.rank = 0;
+  sapSizzle.rankImportance = 2;
+  sapSizzle.tags = ["corporate", "technology"];
+  sapSizzle.videos = ["525680252"];
+  sapSizzle.title = "Indigo Slate SAP Sizzle";
+  sapSizzle.description =
+    "I quickly put together this short sizzle video to show off all the amazing work we've created for the SAP organization. I really like who it turned out.";
+  sapSizzle.imgSrc = "images/sapSizzle.jpg";
+  videoBoxStorage.push(sapSizzle);
 })();
 
 //functions below here
@@ -943,6 +1019,20 @@ function tagSearch() {
       }
     }
     if (tagsSearched == allTagsSearchList.length && allTagsSearchList.length >= 1) {
+      videoBoxStorage[i].rank += 1;
+    }
+  }
+  rankSort();
+}
+
+function awardSearch() {
+  //set all ranks to 0
+  videoBoxStorage.forEach((element) => (element.rank = 0));
+  //remove all video boxes from container
+  removeAllChildNodes(document.getElementById("videoBoxContainer"));
+
+  for (i = 0; i < videoBoxStorage.length; i++) {
+    if (videoBoxStorage[i].award > 0) {
       videoBoxStorage[i].rank += 1;
     }
   }

@@ -34,7 +34,7 @@ function scrollToContactMe() {
 
 //this sets the video position to the scroll position
 let video = document.getElementById("standingUpVid");
-let accelamount = 0.35;
+let accelamount = 0.6;
 let scrollPos = 0;
 let delay = 0;
 
@@ -48,4 +48,4 @@ setInterval(() => {
     delay = 0;
   }
   video.currentTime = delay;
-}, 1000 / 24);
+}, 1000 / 12);
