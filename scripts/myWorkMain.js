@@ -39,7 +39,7 @@ allTags.forEach((e) => {
 
     if (event.srcElement.innerHTML == "Browse All") {
       if (event.srcElement.classList.contains("tagToggled")) {
-        removeAllChildNodes(document.getElementById("videoBoxContainer"));
+        removeAllChildNodes(document.getElementById("cardContainer"));
         event.srcElement.classList.toggle("tagToggled");
         document.getElementById("loopingLottie").style.display = "block";
         return;
@@ -52,7 +52,7 @@ allTags.forEach((e) => {
     //if tag is awards, sort only projects with awards
     if (event.srcElement.innerHTML == "Awards") {
       if (event.srcElement.classList.contains("tagToggled")) {
-        removeAllChildNodes(document.getElementById("videoBoxContainer"));
+        removeAllChildNodes(document.getElementById("cardContainer"));
         event.srcElement.classList.toggle("tagToggled");
         document.getElementById("loopingLottie").style.display = "block";
         return;
@@ -66,7 +66,7 @@ allTags.forEach((e) => {
     //if tag is NOT search, add tag to allTagsSearchList and preform tagSearch function
     event.srcElement.classList.toggle("tagToggled");
     if (document.getElementsByClassName("a2z")[0].classList.contains("tagToggled")) {
-      removeAllChildNodes(document.getElementById("videoBoxContainer"));
+      removeAllChildNodes(document.getElementById("cardContainer"));
       document.getElementsByClassName("a2z")[0].classList.toggle("tagToggled");
     }
     if (allTagsSearchList.includes(event.srcElement.innerHTML)) {
@@ -114,76 +114,61 @@ function VideoBox() {
   this.award = 0;
 
   this.create = function createVideoBox(videos) {
-    let videoBox = document.createElement("div");
-    let videoBoxImageContainer = document.createElement("div");
-    let videoImage = document.createElement("img");
+    //create the card and gradient
+    let card = document.createElement("div");
+    let cardGradient = document.createElement("div");
+    card.setAttribute("class", "card");
+    cardGradient.setAttribute("class", "cardGradient");
+    card.appendChild(cardGradient);
 
-    //set up the video box and add the image + image container to it
-    videoBox.setAttribute("class", "videoBox");
-    videoImage.setAttribute("class", "videoStill");
-    videoBoxImageContainer.setAttribute("class", "videoBoxImageContainer");
-    videoImage.src = this.imgSrc;
+    //create the text box and append to card
+    let cardText = document.createElement("cardText");
+    cardText.setAttribute("class", "cardText");
+    let cardTitle = document.createElement("h2");
+    let cardSubTitle = document.createElement("h3");
+    cardTitle.innerHTML = this.title;
+    cardSubTitle.innerHTML = this.description;
+    cardText.appendChild(cardTitle);
+    cardText.appendChild(cardSubTitle);
+    card.appendChild(cardText);
 
-    videoBox.appendChild(videoImage);
-    videoBox.appendChild(videoBoxImageContainer);
-
-    //set up the title and description text blocks and add them to the video box
-    let titleElem = document.createElement("p");
-    let descriptionElem = document.createElement("p");
-    descriptionElem.setAttribute("class", "description");
-    titleElem.setAttribute("class", "title");
-    titleElem.innerHTML = this.title;
-    descriptionElem.innerHTML = this.description;
-    videoBox.appendChild(titleElem);
-    videoBox.appendChild(descriptionElem);
+    //create image and append to card
+    let cardImg = document.createElement("img");
+    cardImg.src = this.imgSrc;
+    card.appendChild(cardImg);
 
     //add the lottie play button ontop of the image
-    let lottie = document.createElement("lottie-player");
+    let lottiePlayBttn = document.createElement("lottie-player");
     if (!isMobile) {
-      lottie.loop = false;
-      lottie.autoplay = false;
-      lottie.src = "https://assets6.lottiefiles.com/packages/lf20_fqg8yuqr.json";
-      lottie.controls = false;
-      lottie.setAttribute("class", "lottiePlay");
-      lottie.addEventListener("mouseover", () => {
-        lottie.setDirection(1);
-        lottie.play();
+      lottiePlayBttn.loop = false;
+      lottiePlayBttn.autoplay = false;
+      lottiePlayBttn.src = "https://assets6.lottiefiles.com/packages/lf20_fqg8yuqr.json";
+      lottiePlayBttn.controls = false;
+      lottiePlayBttn.setAttribute("class", "lottiePlayBttn");
+      lottiePlayBttn.addEventListener("mouseover", () => {
+        lottiePlayBttn.setDirection(1);
+        lottiePlayBttn.play();
       });
-      lottie.addEventListener("mouseout", () => {
-        lottie.setDirection(-1);
-        lottie.play();
+      lottiePlayBttn.addEventListener("mouseout", () => {
+        lottiePlayBttn.setDirection(-1);
+        lottiePlayBttn.play();
       });
-      videoBoxImageContainer.appendChild(lottie);
+      card.appendChild(lottiePlayBttn);
     } else {
-      lottie.loop = false;
-      lottie.autoplay = true;
-      lottie.src = "https://assets6.lottiefiles.com/packages/lf20_fqg8yuqr.json";
-      lottie.controls = false;
-      lottie.setAttribute("class", "lottiePlay");
-      videoBoxImageContainer.appendChild(lottie);
-    }
-
-    //add a clio award if applicable
-    if (this.award == 1) {
-      let award = document.createElement("lottie-player");
-      award.loop = true;
-      award.autoplay = true;
-      award.src = "https://assets7.lottiefiles.com/packages/lf20_howv2r3o.json";
-      award.controls = false;
-      award.setAttribute("class", "award");
-      videoBox.appendChild(award);
+      lottiePlayBttn.loop = false;
+      lottiePlayBttn.autoplay = true;
+      lottiePlayBttn.src = "https://assets6.lottiefiles.com/packages/lf20_fqg8yuqr.json";
+      lottiePlayBttn.controls = false;
+      lottiePlayBttn.setAttribute("class", "lottiePlayBttn");
+      card.appendChild(lottiePlayBttn);
     }
 
     //attach the videobox to the DOM
-    document.getElementById("videoBoxContainer").appendChild(videoBox);
-    videoImage.addEventListener("load", () => {
-      videoImage.style.opacity = "1";
-    });
+    document.getElementById("cardContainer").appendChild(card);
 
-    //whenever the lottie animation is clicked, it transitions to the different video files
-    lottie.addEventListener("click", () => {
-      removeAllChildNodes(videoBox);
-
+    //whenever the playbutton is clicked, it transitions to the different video files
+    lottiePlayBttn.addEventListener("click", () => {
+      removeAllChildNodes(card);
       let xCloseButton = document.createElement("lottie-player");
       xCloseButton.loop = false;
       xCloseButton.autoplay = true;
@@ -191,23 +176,50 @@ function VideoBox() {
       xCloseButton.controls = false;
       xCloseButton.speed = 0.5;
       xCloseButton.setAttribute("class", "xCloseButton");
-      videoBox.appendChild(xCloseButton);
+      card.appendChild(xCloseButton);
 
-      for (i = 0; i < videos.length; i++) {
-        let video = document.createElement("iframe");
-        video.setAttribute("class", "videoInlay");
-        video.src = "https://player.vimeo.com/video/" + videos[i];
-        video.allow = "autoplay; fullscreen; picture-in-picture";
-        videoBox.appendChild(video);
-      }
+      //if videos length is over 1, cycle through the different videos
+      let curVideo = 0;
+      let video = document.createElement("iframe");
+      video.setAttribute("class", "videoInlay");
+      video.src = "https://player.vimeo.com/video/" + videos[curVideo];
+      video.allow = "autoplay; fullscreen; picture-in-picture";
+      card.appendChild(video);
 
+      //set up next video button
+      let nextVid = document.createElement("div");
+      nextVid.setAttribute("class", "nextVid");
+      nextVid.addEventListener("click", () => {
+        if (curVideo >= videos.length - 1) {
+          curVideo = 0;
+        } else {
+          curVideo++;
+        }
+        video.src = "https://player.vimeo.com/video/" + videos[curVideo];
+      });
+      //set up previous video button
+      let prevVideo = document.createElement("div");
+      prevVideo.setAttribute("class", "prevVideo");
+      prevVideo.addEventListener("click", () => {
+        if (curVideo <= 0) {
+          curVideo = videos.length - 1;
+        } else {
+          curVideo--;
+        }
+        video.src = "https://player.vimeo.com/video/" + videos[curVideo];
+      });
+
+      card.appendChild(nextVid);
+      card.appendChild(prevVideo);
+
+      //when the X is clicked, we transition back to the card with image
       xCloseButton.addEventListener("click", () => {
         //deletes all videos and adds back in the image / title / description
-        removeAllChildNodes(videoBox);
-        videoBox.appendChild(videoImage);
-        videoBox.appendChild(videoBoxImageContainer);
-        videoBox.appendChild(titleElem);
-        videoBox.appendChild(descriptionElem);
+        console.log("ran");
+        removeAllChildNodes(card);
+        card.appendChild(cardText);
+        card.appendChild(cardImg);
+        card.appendChild(lottiePlayBttn);
       });
     });
   };
@@ -956,7 +968,7 @@ function searchBox() {
   //set all ranks to 0
   videoBoxStorage.forEach((element) => (element.rank = 0));
   //remove all video boxes from container
-  removeAllChildNodes(document.getElementById("videoBoxContainer"));
+  removeAllChildNodes(document.getElementById("cardContainer"));
 
   let searchQuery = document.getElementById("searchBox").value;
 
@@ -972,7 +984,7 @@ function searchBox() {
 
 function browseAll() {
   //empty the DOM and reset all tags except browseAll to tagToggled
-  removeAllChildNodes(document.getElementById("videoBoxContainer"));
+  removeAllChildNodes(document.getElementById("cardContainer"));
   for (i = 0; i < document.getElementsByClassName("tag").length; i++) {
     if (document.getElementsByClassName("tag")[i].classList.contains("tagToggled")) {
       document.getElementsByClassName("tag")[i].classList.toggle("tagToggled");
@@ -1009,7 +1021,7 @@ function tagSearch() {
   //set all ranks to 0
   videoBoxStorage.forEach((element) => (element.rank = 0));
   //remove all video boxes from container
-  removeAllChildNodes(document.getElementById("videoBoxContainer"));
+  removeAllChildNodes(document.getElementById("cardContainer"));
 
   for (i = 0; i < videoBoxStorage.length; i++) {
     let tagsSearched = 0;
@@ -1029,7 +1041,7 @@ function awardSearch() {
   //set all ranks to 0
   videoBoxStorage.forEach((element) => (element.rank = 0));
   //remove all video boxes from container
-  removeAllChildNodes(document.getElementById("videoBoxContainer"));
+  removeAllChildNodes(document.getElementById("cardContainer"));
 
   for (i = 0; i < videoBoxStorage.length; i++) {
     if (videoBoxStorage[i].award > 0) {

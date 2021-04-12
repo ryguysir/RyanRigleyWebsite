@@ -1,10 +1,17 @@
 :root {
-  --main-color: rgb(78, 198, 198);
   --second-color: rgb(109, 200, 228);
   --third-color: rgb(179, 179, 255);
   --fourth-color: #eba2a8;
   --offWhite-color: rgba(235, 235, 235, 1);
   --darkBlue: #2c3e50;
+
+  --main-tag-color: #56799c;
+  --limeGreen: rgba(0, 193, 102, 1);
+  --text-color: #1d2a36;
+  --text-color-hover: #b8dcff;
+  --transition-time: 0.25s;
+
+  --card-transition-time: 0.25s;
 }
 
 html,
@@ -163,97 +170,134 @@ body {
   background: var(--second-color);
 }
 
-#videoBoxContainer {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: top center;
-  justify-content: center;
-  margin-top: 40px;
-}
-#videoBoxContainer::after {
-  content: "";
-  width: 100%;
-  height: 200px;
-}
-
-.videoBox {
-  transition: all 0.5s ease-out;
-  overflow: hidden;
-  animation: fadeInScaleIn 1s ease-in-out;
-  transform-origin: center;
-  z-index: 1;
-  padding: 10px;
-  margin: 25px;
-  width: 500px;
-  text-align: center;
-  font-weight: 300;
-  border-radius: 12px;
-  background: var(--offWhite-color);
-  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -2px 2px,
-    rgba(0, 193, 102, 0.3) -3px 3px, rgba(0, 193, 102, 0.4) -4px 4px,
-    rgba(0, 193, 102, 0.2) -5px 5px;
-}
-.videoBox:hover {
-  border-radius: 20px;
-  box-shadow: rgba(240, 46, 170, 0.3) -6px 6px, rgba(240, 46, 170, 0.2) -12px 12px,
-    rgba(240, 46, 170, 0.1) -18px 18px;
-}
-
-.videoBox iframe {
-  animation: fadeInScaleIn 1s ease-in-out;
-  margin: 0px 0px 20px 0px;
-}
-
-.videoBox .description {
-  animation: fadeInScaleIn 1s ease-in-out;
-  margin: 5% 5% 10% 5%;
-  text-align: center;
-  background: hsl(210, 29%, 80%);
-  padding: 20px;
-  border-radius: 0.25em;
-}
-
-.videoBox .title {
-  animation: fadeInScaleIn 1s ease-in-out;
-  margin-top: 10%;
-  font-size: 150%;
-  text-align: center;
-  font-weight: 700;
-}
-
-.videoBoxImageContainer {
-  animation: fadeInScaleIn 1s ease-in-out;
-  width: 500px;
-  height: 281.25px;
-  margin-top: -284.25px;
-  display: flex;
-  align-content: center;
-  align-items: center;
+#cardContainer {
+  position: relative;
+  width: 90vw;
+  height: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  display: grid;
   justify-content: center;
   justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 40px 0px;
 }
 
-.videoStill {
+.card {
   animation: fadeInScaleIn 1s ease-in-out;
-  transition: all 0.5s ease-out;
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 5px;
+  transition: all var(--card-transition-time) ease-out;
+  /*   makes it so this card only takes up 1 grid space */
+  grid-area: span 1;
+
+  /*standard poster size aspect is 4x6 */
+  width: 310px;
+  height: 450px;
+  margin-top: 10px;
+
+  /*   this sets the border so that both the inside and outside can have a border radius */
+  box-shadow: 0 0 0 2px rgb(200, 200, 200), 0 0 100px rgba(0, 0, 0, 0.5) inset,
+    0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+
+  /*   card color properties */
+  background: rgb(230, 230, 230);
+
+  /*   internal card styling   */
+  overflow: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+  transform: scale(1);
+}
+.cardGradient {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+.card:hover {
+  box-shadow: 0 0 0 4px var(--limeGreen), 0 0 100px rgba(0, 0, 0, 0.5) inset,
+    0 0 50px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025);
+}
+.card img {
+  transition: all var(--card-transition-time) ease-out;
+  /*   sets the image to fill the entire card and crop excess */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  /*   image adjustments */
+  filter: blur(2px) contrast(0.5) brightness(1.25) grayscale(50%);
+  mix-blend-mode: multiply;
+}
+.card:hover > img {
+  filter: blur(0px) contrast(1) brightness(1.25) grayscale(0%);
+}
+.cardText {
+  transition: all var(--card-transition-time) ease-out;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 90%;
+  height: inherit;
+  z-index: 1;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 3fr 1fr 1fr;
+  user-select: none;
+}
+.card:hover > .cardText > :is(h2, h3) {
   opacity: 0;
 }
-
-.lottiePlay {
-  transition: all 0.5s ease-out;
+.card h2 {
+  transition: all var(--card-transition-time) ease-out;
   position: relative;
-  transform-origin: center;
-  transform: scale(0.45);
-  opacity: 0.75;
-  cursor: pointer;
+  font-weight: 400;
+  color: white;
+  grid-row: 2/3;
 }
-.lottiePlay:hover {
-  transform: scale(0.65);
+.card h3 {
+  transition: all var(--card-transition-time) ease-out;
+  position: relative;
+  font-weight: 200;
+  font-size: 75%;
+  color: white;
+  grid-row: 3/3;
+}
+
+.nextVid {
+  position: relative;
+  float: right;
+  width: 40px;
+  height: 20px;
+  background: red;
+  margin: 10px;
+}
+.prevVideo {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 20px;
+  background: green;
+  margin: 10px;
+}
+
+.lottiePlayBttn {
+  transition: all var(--card-transition-time) ease-out;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  z-index: 3;
+  opacity: 0.5;
 }
 
 .award {
@@ -285,54 +329,49 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
 .tag {
+  color: var(--text-color);
+  transition: all var(--transition-time) ease-out;
   position: relative;
+  height: 30px;
+  background: var(--main-tag-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: 300;
   overflow: hidden;
   user-select: none;
-  transition: all 0.25s ease-out;
-  white-space: nowrap;
-  display: table;
-  text-align: center;
-  color: rgb(100, 100, 120);
-  font-weight: 300;
-  border-radius: 4px;
-  padding: 0.5em;
-  margin: 0.5em;
-  background: var(--offWhite-color);
-  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -2px 2px,
-    rgba(0, 193, 102, 0.3) -3px 3px, rgba(0, 193, 102, 0.4) -4px 4px,
-    rgba(0, 193, 102, 0.2) -5px 5px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
-    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .tag:hover {
-  border-radius: 12px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15) inset,
+    -1px -1px 3px rgba(255, 255, 255, 0.35) inset;
 }
-
-.tag:hover::after {
-  animation: tagCircle 0.8s ease-in-out;
+.tag::after {
   content: "";
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(0, 193, 102, 0.4);
+  transition: all var(--transition-time) ease-out;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(0);
+  background: var(--limeGreen);
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+  mix-blend-mode: overlay;
+  left: -100%;
+  cursor: pointer;
+}
+.tag:hover::after {
+  border-radius: 0%;
+  left: 0%;
 }
 
 .tagToggled {
-  color: var(--offWhite-color);
-  background: hsl(321, 60%, 65%);
-  border-radius: 8px;
-  box-shadow: rgba(0, 193, 102, 0.4) -1px 1px, rgba(0, 193, 102, 0.4) -3px 3px,
-    rgba(0, 193, 102, 0.3) -5px 5px, rgba(0, 193, 102, 0.4) -7px 7px,
-    rgba(0, 193, 102, 0.2) -9px 9px, rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset,
-    rgba(255, 255, 255, 0.25) 0px 0px 2px inset;
+  background: var(--limeGreen);
 }
 
 .a2z {
@@ -404,71 +443,5 @@ body {
   100% {
     transform: translateX(-50%) translateY(-50%) scale(4);
     opacity: 0;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  #loopingLottie {
-    top: -20%;
-  }
-  #tagContainer {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 10px 5px;
-  }
-  .tag {
-    font-size: 70%;
-    font-weight: 300;
-    padding: 0.35em;
-    margin: 0.35em;
-  }
-  .tag:hover {
-    border-radius: 4px;
-  }
-
-  .search {
-    grid-column: auto;
-  }
-  .a2z {
-    grid-column: auto;
-  }
-  .videoBox {
-    width: 340px;
-  }
-  .videoBox iframe {
-    width: 340px;
-    min-height: 210px;
-  }
-
-  .videoBoxImageContainer {
-    animation: fadeInScaleIn 1s ease-in-out;
-    width: 340px;
-  }
-
-  .videoBox .description {
-    font-size: 80%;
-    font-weight: 200;
-  }
-
-  .videoBox .title {
-    font-weight: 600;
-  }
-
-  .lottiePlay {
-    position: relative;
-    opacity: 0.75;
-    margin-top: 100px;
-    cursor: pointer;
-  }
-  .lottiePlay:hover {
-    transform: scale(0.45);
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  #siteContainer {
-    position: relative;
-    width: 75vw;
-    margin: 0 auto;
   }
 }
